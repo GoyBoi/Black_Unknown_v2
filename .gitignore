@@ -1,0 +1,29 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env*
+!.env.example
+
+# Next.js
+.next/
+out/
+
+# Logs
+*.log
+
+# Build outputs
+dist/
+build/
+coverage/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Git subdirectories (avoid nested repositories)
+**/.git/
