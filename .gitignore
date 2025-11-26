@@ -1,6 +1,9 @@
 # Dependencies
 node_modules/
 
+# AI agent files
+.bmad/
+
 # Environment variables
 .env*
 !.env.example
