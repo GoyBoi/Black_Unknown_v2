@@ -43,8 +43,8 @@ const Cart = () => {
 
   const updateQuantity = (id: number, newQuantity: number) => {
     if (newQuantity < 1) return;
-    
-    setCartItems(cartItems.map(item => 
+
+    setCartItems(cartItems.map(item =>
       item.id === id ? { ...item, quantity: newQuantity } : item
     ));
   };
@@ -79,29 +79,29 @@ const Cart = () => {
                   <p className="text-sm font-normal text-white/60">Size: {item.size}</p>
                   <p className="text-sm font-normal text-white/60">Color: {item.color}</p>
                 </div>
-                
+
                 <div className="flex items-center justify-between sm:items-start sm:justify-start sm:gap-12">
                   <div className="flex items-center gap-4 text-white">
-                    <button 
+                    <button
                       className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-[#222222] text-xl transition-colors hover:bg-white/10"
                       onClick={() => updateQuantity(item.id, item.quantity - 1)}
                     >
                       -
                     </button>
                     <span className="w-4 text-center text-base font-medium">{item.quantity}</span>
-                    <button 
+                    <button
                       className="flex h-8 w-8 cursor-pointer items-center justify-center rounded-full border border-[#222222] text-xl transition-colors hover:bg-white/10"
                       onClick={() => updateQuantity(item.id, item.quantity + 1)}
                     >
                       +
                     </button>
                   </div>
-                  
+
                   <p className="text-right text-base font-medium text-white sm:min-w-[6rem]">
                     R{(item.price * item.quantity).toLocaleString()}
                   </p>
-                  
-                  <button 
+
+                  <button
                     className="ml-4 flex h-8 w-8 items-center justify-center rounded-full text-white/60 transition-colors hover:bg-white/10 sm:hidden"
                     onClick={() => removeItem(item.id)}
                   >
@@ -109,8 +109,8 @@ const Cart = () => {
                   </button>
                 </div>
               </div>
-              
-              <button 
+
+              <button
                 className="hidden h-8 w-8 items-center justify-center rounded-full text-white/60 transition-colors hover:bg-white/10 sm:flex"
                 onClick={() => removeItem(item.id)}
               >
@@ -121,27 +121,27 @@ const Cart = () => {
         </div>
 
         {/* Promo and Summary */}
-        <div className="mt-12 flex flex-col justify-between gap-6 lg:flex-row lg:items-end">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:gap-8">
+        <div className="mt-12 flex flex-col justify-between gap-6 lg:flex-row lg:items-start">
+          <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:gap-16">
             <div className="w-full lg:w-64">
               <label className="mb-2 block text-sm font-medium text-white" htmlFor="promo-code">
                 Promo Code
               </label>
               <div className="flex">
-                <input 
-                  className="h-12 flex-grow appearance-none border border-[#222222] bg-[#0A0A0A] px-4 py-2 text-sm text-white placeholder-white/40 focus:border-primary focus:outline-none focus:ring-0" 
-                  id="promo-code" 
-                  placeholder="Enter code" 
+                <input
+                  className="h-12 flex-grow appearance-none border border-[#222222] bg-[#0A0A0A] px-4 py-2 text-sm text-white placeholder-white/40 focus:border-primary focus:outline-none focus:ring-0"
+                  id="promo-code"
+                  placeholder="Enter code"
                   type="text"
                   value={promoCode}
                   onChange={(e) => setPromoCode(e.target.value)}
                 />
-                <button className="h-12 w-24 shrink-0 border border-l-0 border-[#222222] text-sm font-medium text-white/60 transition-colors hover:bg-white/10">
+                <button className="h-12 w-24 shrink-0 border border-l-0 border-white/20 text-sm font-medium text-white/60 transition-colors hover:bg-white/10">
                   Apply
                 </button>
               </div>
             </div>
-            
+
             <div className="flex flex-col gap-2">
               <div className="flex justify-between gap-4">
                 <p className="text-sm text-white/60">Subtotal</p>
@@ -157,9 +157,9 @@ const Cart = () => {
               </div>
             </div>
           </div>
-          
-          <Link 
-            href="/checkout" 
+
+          <Link
+            href="/checkout"
             className="flex h-14 w-full cursor-pointer items-center justify-center bg-primary px-8 text-base font-bold text-[#0A0A0A] transition-opacity hover:opacity-90 lg:w-auto"
           >
             Proceed to Checkout
