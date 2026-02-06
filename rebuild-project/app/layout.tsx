@@ -16,8 +16,8 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: 'Black Unknown - The Art of Anonymity',
-  description: 'Discover a new era of minimalistic luxury and timeless style, crafted for the discerning individual who values subtlety over spectacle.',
+  title: 'MMWAFRIKA PRIDE - Handcrafted Crochet Creations',
+  description: 'Discover our exquisite collection of hand-knitted crochet items, from elegant clothes to adorable dolls and beautiful flowers, crafted with love and attention to detail.',
 };
 
 export default function RootLayout({

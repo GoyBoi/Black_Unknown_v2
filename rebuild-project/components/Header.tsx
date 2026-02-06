@@ -40,19 +40,19 @@ const Header = () => {
           </svg>
         </div>
         <Link href="/" className="text-white text-lg font-bold tracking-[-0.015em]">
-          Black Unknown
+          MMWAFRIKA PRIDE
         </Link>
       </div>
 
       <nav className="hidden md:flex flex-1 justify-center items-center gap-9">
         <Link href="/shop" className="text-white/80 hover:text-primary text-sm font-medium leading-normal transition-colors">
-          New Arrivals
+          Crochet Clothes
         </Link>
         <Link href="/shop" className="text-white/80 hover:text-primary text-sm font-medium leading-normal transition-colors">
-          Collections
+          Amigurumi Dolls
         </Link>
         <Link href="/shop" className="text-white/80 hover:text-primary text-sm font-medium leading-normal transition-colors">
-          Accessories
+          Crochet Flowers
         </Link>
         <Link href="/about" className="text-white/80 hover:text-primary text-sm font-medium leading-normal transition-colors">
           About

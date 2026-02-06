@@ -1,6 +1,6 @@
-# Black Unknown - Luxury Fashion E-commerce
+# MMWAFRIKA PRIDE - Luxury Fashion E-commerce
 
-Black Unknown is a luxury fashion e-commerce platform focused on minimalistic design and timeless elegance. This Next.js application features a modern UI with dark theme, responsive design, and full e-commerce functionality.
+MMWAFRIKA PRIDE is a handcrafted crochet e-commerce platform featuring beautiful hand-knitted items from clothes to dolls and flowers. This Next.js application showcases our exquisite crochet creations with a modern UI, responsive design, and full e-commerce functionality.
 
 ## Features
 
@@ -64,8 +64,8 @@ NEXT_PUBLIC_BASE_URL=http://localhost:3000
 
 This app is ready for deployment on Vercel, Netlify, or any other platform that supports Next.js applications.
 
-## About Black Unknown
+## About MMWAFRIKA PRIDE
 
-Black Unknown represents the art of anonymity in fashion, where subtlety and craftsmanship take precedence over ostentatious display. We create pieces that speak to the discerning individual who values quality and timeless design over fleeting trends.
+MMWAFRIKA PRIDE represents the art of anonymity in fashion, where subtlety and craftsmanship take precedence over ostentatious display. We create pieces that speak to the discerning individual who values quality and timeless design over fleeting trends.
 
-© {new Date().getFullYear()} Black Unknown. All Rights Reserved.
+© {new Date().getFullYear()} MMWAFRIKA PRIDE. All Rights Reserved.

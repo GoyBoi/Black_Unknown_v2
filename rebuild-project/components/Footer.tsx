@@ -19,10 +19,10 @@ const Footer = () => {
                   ></path>
                 </svg>
               </div>
-              <h2 className="text-lg font-bold leading-tight tracking-[-0.015em]">Black Unknown</h2>
+              <h2 className="text-lg font-bold leading-tight tracking-[-0.015em]">MMWAFRIKA PRIDE</h2>
             </div>
             <p className="text-sm leading-relaxed mb-4 max-w-sm">
-              Join our mailing list for exclusive collections, new arrivals and everything in between.
+              Join our mailing list for exclusive crochet collections, new handmade arrivals and everything in between.
             </p>
             <form className="flex w-full max-w-sm">
               <input 
@@ -48,13 +48,13 @@ const Footer = () => {
               <li><Link className="hover:text-white transition-colors block" href="/faq">FAQ</Link></li>
             </ul>
           </div>
-          
+
           <div>
-            <h3 className="font-bold text-white mb-4">Company</h3>
+            <h3 className="font-bold text-white mb-4">Collections</h3>
             <ul className="space-y-2 text-sm">
-              <li><Link className="hover:text-white transition-colors block" href="/about">Our Story</Link></li>
-              <li><Link className="hover:text-white transition-colors block" href="/careers">Careers</Link></li>
-              <li><Link className="hover:text-white transition-colors block" href="/press">Press</Link></li>
+              <li><Link className="hover:text-white transition-colors block" href="/shop">Crochet Clothes</Link></li>
+              <li><Link className="hover:text-white transition-colors block" href="/shop">Amigurumi Dolls</Link></li>
+              <li><Link className="hover:text-white transition-colors block" href="/shop">Crochet Flowers</Link></li>
             </ul>
           </div>
           
@@ -69,7 +69,7 @@ const Footer = () => {
         </div>
         
         <div className="border-t border-white/10 mt-12 pt-6 text-center text-xs">
-          <p>© {new Date().getFullYear()} Black Unknown. All Rights Reserved.</p>
+          <p>© {new Date().getFullYear()} MMWAFRIKA PRIDE. All Rights Reserved.</p>
         </div>
       </div>
     </footer>

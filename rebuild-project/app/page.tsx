@@ -12,23 +12,23 @@ const HomePage = () => {
   const featuredProducts = [
     {
       id: 1,
-      name: 'The Noir Trench',
+      name: 'Hand-knitted Cardigan',
       price: 890,
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAmGJJpfHdWbDOC6SDjYPSwo8UuxScLHQhudwqTf-siHKogDcifsCtX1lJfIBpFyIkPp0x7CL9CMY-amwusJ42RczaPukuHNB7t_QLtwOUSr6lYlMuSsORx3_V-SNR_oDFwTFjFx3UFmmgAPnjCf7szYi6Ii2EkZIKRONr81q64ISSC5bOuguJTX74GBAhf63Ohgf64MfGA14NjNQdf5T51x7CZzLVTNCBnAtNS2LLD0-jXsB9Bc_zBxqyYd6_RGhwAwsnlP8kD0EWh',
+      image: 'https://images.unsplash.com/photo-1583324115154-580e6c7b0e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
       brand: 'mmwAfrika Pride',
     },
     {
       id: 2,
-      name: 'Onyx Leather Tote',
+      name: 'Crochet Doll Set',
       price: 650,
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAFQ87S5MnyfCmCU2p35xl59LfFJEPXbeZZ97Q5k8leXrpf3W48gDw5xeCXP6W9KBzPe2-GU7tQkVIiRJ68tfkATuEsBFDARyEUP464Wea5GnYhVVEW7RRD20bpxTy2qYlz_I-ue7uSX8wY-dZgP2rZCpzSQkiE9DivZr2jOpKI0-zIHi9OoONNYCxYLFP9pK80hJx4YPsbUxRWg_ABHNaqdzfpXy_k9aC6OCwu82VvpVXPnR9jK0t2r1YNOkzEBFG73RazH8oiUh_a',
-      brand: 'Amogela Innovations',
+      image: 'https://images.unsplash.com/photo-1583324115154-580e6c7b0e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+      brand: 'mmwAfrika Pride',
     },
     {
       id: 3,
-      name: 'Midnight Silk Scarf',
+      name: 'Crocheted Flower Bouquet',
       price: 220,
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCmfKkJ2Upa5XThXxyPAmV1PO_j1fyx4Ay5sGty0S27uDHPEcP5hx3a8nE_tc9D1Bj35GQAlzRzSu7XZNsOsIXWWRgVa4U_3KZGc9cxnX8xqRtpYAEsgK5qUEE2KeSNL_lCJpNpFKyfd1eFMUAxWcK3gnWIhHtlKladaVrh8BDxe-88bjEBnhQE1hHO0uOKknTvXL8ntRW6iaYzZZoexl39E5GQFVEDLRmkCpSu5Pz8cQ_ZClLYEOBxIq5SCipSL6f9xRMGqJgSeRXL',
+      image: 'https://images.unsplash.com/photo-1595444666477-c921977d4f8d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
       brand: 'mmwAfrika Pride',
     },
   ];
@@ -36,30 +36,30 @@ const HomePage = () => {
   const newArrivals = [
     {
       id: 4,
-      name: 'Eclipse Timepiece',
-      price: 1200,
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuD0pMfcFMnPdPg5NxERgov8kxRYJKfmcTjElmK0Skkqag3Gmc-f4-fdGBkwPgaAX0kF9vGrhtftAz5vsLrscyAAK8Gdijzfmrwsq_aCwkK-OYBvycjoAnGoPQJ9D-qiviZ2zeSKrMiW7Di2KSSE4GUS_mwv9m-QZQHtA4RckoKkn-AOnjL_hEb_vevOCaCbcoN1VxAzvlkJD6iXGfgPkqZzbE3p7Ry_0E63_yyjQhVd2nN1T-srmHpW7ZxVicwooeBu6vja0rsDtie9',
-      brand: 'Amogela Innovations',
+      name: 'Baby Crochet Set',
+      price: 450,
+      image: 'https://images.unsplash.com/photo-1583324115154-580e6c7b0e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+      brand: 'mmwAfrika Pride',
     },
     {
       id: 5,
-      name: 'Shadow Ankle Boots',
+      name: 'Crocheted Shawl',
       price: 780,
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBu5fW1pFPLpRz1gLyy3iFzVbmeNyfrJO6WJoT7qqi1rinjwXiMAEdNJREbKam-I74fnndoDFmcqhBjsPmp-kZDWyH3aTjyQ2OifffjZCZEfK2BIiBzCGyW79l88gtzOT3qBgyzAUWHsOkE49ABiZneW8Gu82Q232dCehjLOGZ5orBJuIbrFy3gA6JKoKjcyLhcCCxsbtM4vTkZ0UzI8CRF2a3WsDg1-ADK0qLEqXW6QukmftsBSfRolGIfJc7CU7dHda0GxxJFnkX3',
+      image: 'https://images.unsplash.com/photo-1595444666477-c921977d4f8d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
       brand: 'mmwAfrika Pride',
     },
     {
       id: 6,
-      name: 'Void Structured Blazer',
-      price: 950,
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBu5njUBjt-n7zcLAMb8tGU3VXiGVk8tf_uwgOkSDB0ckHA3W38thwEzOul7D5nIgnWrWM3bD0FPY9qItYXsDWfGlFq82KYgNeK3YhoMxI3HEBNobNQaONOxTImVMSTJN2RtYSLSnAxpWcihQqgzBrHFZWr-88X5TbFzTe-IjQ44H-2WGpoiu8FOVIPtGT-oeKOxDxThZPca6Vw-tnKcMXgRBBMQPdBiwHFReyFPDQ55-YKB2QyseMB8VmxYuY37YQ34Gmp9dmd1XT9',
-      brand: 'Amogela Innovations',
+      name: 'Amigurumi Animals',
+      price: 350,
+      image: 'https://images.unsplash.com/photo-1583324115154-580e6c7b0e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+      brand: 'mmwAfrika Pride',
     },
     {
       id: 7,
-      name: 'Phantom Sunglasses',
-      price: 450,
-      image: 'https://lh3.googleusercontent.com/aida-public/AB6AXuC-1BcczQUxqs86uYG52p8d46KPnKTA6NRRJildhMczcpBWFUop1T8UK9r7H9F0_j9AKlsA1t1tcRKRzuXUYAje9UwqdbYbSlMdiH0d74atYMFD_fXt92NWCPEXYNdjprSToP2LIPoLF4z3061U18atHnO8hmFRaCojMcq3wu_WyPMun1hQ8YSPEvVOk7l_GSz0fIdBa24w3cxWxKxh7DSmhAuCP6vWD7lmpEO1_0-niICMnTYsYU6VhLKcFDm1VElstPykWi8UFaOB',
+      name: 'Crocheted Home Decor',
+      price: 550,
+      image: 'https://images.unsplash.com/photo-1595444666477-c921977d4f8d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
       brand: 'mmwAfrika Pride',
     },
   ];
@@ -79,26 +79,26 @@ const HomePage = () => {
           >
             <div className="flex flex-col gap-4 max-w-3xl z-10">
               <h1 className="text-4xl md:text-6xl font-black text-white leading-tight tracking-tight">
-                The Art of Anonymity
+                Handcrafted with Love
               </h1>
               <p className="text-white/90 text-base md:text-lg max-w-xl mx-auto">
-                Discover a new era of minimalistic luxury and timeless style, crafted for the discerning individual who values subtlety over spectacle.
+                Discover our exquisite collection of hand-knitted crochet items, from elegant clothes to adorable dolls and beautiful flowers.
               </p>
-              <Link 
-                href="/shop" 
+              <Link
+                href="/shop"
                 className="mt-6 mx-auto flex items-center gap-2 bg-primary text-black hover:bg-saffron-gold/90 font-bold py-3 px-6 rounded-lg transition-colors w-fit"
               >
-                <span>Explore The Collection</span>
+                <span>Explore Crochet Collection</span>
                 <ArrowRightIcon className="w-5 h-5" />
               </Link>
             </div>
           </div>
         </section>
 
-        {/* Featured Products Section */}
+        {/* Featured Crochet Items Section */}
         <section className="px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">Featured Products</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">Featured Crochet Items</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {featuredProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
@@ -119,20 +119,20 @@ const HomePage = () => {
             <div className="flex flex-col gap-4">
               <h1 className="text-3xl md:text-4xl font-bold text-white">Our Ethos</h1>
               <p className="text-white/80 text-base">
-                Black Unknown is built on a foundation of craftsmanship, minimalism, and timeless style. We create pieces that are both bold and understated, designed for the discerning individual.
+                MMWAFRIKA PRIDE is built on a foundation of traditional crochet craftsmanship and artistic expression. We create unique, hand-knitted pieces that celebrate the beauty of handmade artistry.
               </p>
               <p className="text-white/80 text-base mt-2">
-                Every piece is meticulously crafted from the finest materials, ensuring longevity and an impeccable finish that speaks to our commitment to excellence and the art of subtlety.
+                Every crochet item is lovingly handcrafted with attention to detail, ensuring quality and uniqueness that speaks to our commitment to preserving traditional crafts and celebrating creativity.
               </p>
             </div>
           </div>
         </section>
 
-        {/* New Arrivals Section */}
+        {/* New Crochet Creations Section */}
         <section className="px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="max-w-7xl mx-auto">
             <div className="flex justify-between items-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold text-white">New Arrivals</h2>
+              <h2 className="text-2xl md:text-3xl font-bold text-white">New Crochet Creations</h2>
               <div className="flex gap-2">
                 <button className="p-2 rounded-full border border-white/20 text-white/80 hover:bg-white/10 transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">

@@ -21,12 +21,6 @@ const nextConfig = {
       },
     ],
   },
-  experimental: {
-    // Disable turbopack to use regular webpack-based next.js
-    turbo: {
-      enabled: false
-    }
-  }
 };
 
 module.exports = nextConfig;

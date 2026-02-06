@@ -8,30 +8,30 @@ const AboutPage = () => {
       <Header />
       
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h1 className="text-4xl font-bold text-white mb-8">About Black Unknown</h1>
+        <h1 className="text-4xl font-bold text-white mb-8">About MMWAFRIKA PRIDE</h1>
         
         <div className="prose prose-invert max-w-none">
           <p className="text-lg text-white/80 mb-6">
-            Black Unknown is built on a foundation of craftsmanship, minimalism, and timeless style. We create pieces that are both bold and understated, designed for the discerning individual.
+            MMWAFRIKA PRIDE is built on a foundation of traditional crochet craftsmanship and artistic expression. We create unique, hand-knitted pieces that celebrate the beauty of handmade artistry.
           </p>
           
           <p className="text-lg text-white/80 mb-6">
-            Every piece is meticulously crafted from the finest materials, ensuring longevity and an impeccable finish that speaks to our commitment to excellence and the art of subtlety.
+            Every crochet item is lovingly handcrafted with attention to detail, ensuring quality and uniqueness that speaks to our commitment to preserving traditional crafts and celebrating creativity.
           </p>
           
           <h2 className="text-2xl font-bold text-white mt-10 mb-4">Our Ethos</h2>
           <p className="text-lg text-white/80 mb-6">
-            At Black Unknown, we believe in the power of anonymity and the strength that comes from letting your character, rather than your clothing, speak volumes. Our designs embrace the shadows, celebrating those who prefer the quiet confidence of well-crafted, minimalistic luxury.
+            At MMWAFRIKA PRIDE, we believe in the beauty of handmade items and the joy that comes from creating and using items made with love. Our crochet creations embrace tradition, celebrating the artistry of hand-knitted items that bring warmth and beauty to everyday life.
           </p>
           
           <h2 className="text-2xl font-bold text-white mt-10 mb-4">Sustainability</h2>
           <p className="text-lg text-white/80 mb-6">
-            Sustainability is at the core of our brand. We source our materials ethically and ensure our production processes have minimal environmental impact. Our pieces are designed to last, reducing the need for frequent replacements and contributing to a more sustainable fashion industry.
+            We are committed to sustainable practices in every aspect of our crochet business. Using eco-friendly yarns and materials, we ensure that our environmental footprint remains minimal while maintaining the highest quality standards in our hand-knitted creations.
           </p>
-          
-          <h2 className="text-2xl font-bold text-white mt-10 mb-4">Our Team</h2>
+
+          <h2 className="text-2xl font-bold text-white mt-10 mb-4">Our Craftsmanship</h2>
           <p className="text-lg text-white/80 mb-6">
-            Our team consists of passionate designers, craftspeople, and sustainability experts who share a vision of creating timeless pieces that honor both the individual and the environment. We work closely with local artisans and suppliers to ensure the highest quality while supporting communities and traditions.
+            Each crochet item in our collection is meticulously handcrafted by skilled artisans who bring years of expertise to every stitch. Our commitment to quality ensures that each item is not only beautiful but also durable and long-lasting.
           </p>
         </div>
       </main>

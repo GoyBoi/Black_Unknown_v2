@@ -12,7 +12,7 @@ const CartSummary = () => {
 
   return (
     <div className="bg-[#1a150e] p-6 rounded-lg">
-      <h3 className="text-xl font-bold text-white mb-4">Order Summary</h3>
+      <h3 className="text-xl font-bold text-white mb-4">Crochet Order Summary</h3>
 
       <div className="space-y-3">
         <div className="flex justify-between">
