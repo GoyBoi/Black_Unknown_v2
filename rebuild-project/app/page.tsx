@@ -111,17 +111,17 @@ const HomePage = () => {
         <section className="px-4 sm:px-6 lg:px-8 py-16 lg:py-24 bg-background">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div
-              className="w-full h-96 bg-cover bg-center rounded-lg"
+              className="w-full h-96 bg-cover bg-center rounded-lg bg-foreground/10"
               style={{
                 backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuAZzIgq3G-HmScw4GUaFKAOfixQ5mDuGHt8SOU1XQZ7DJQR9VWLcorxgHc4_-I0jk3iPVcRbtfZd4LitjaUyr9slKGG1MjTW4Khkp-l83OLTiIHDLOzwQY6OYbWV34uN5_cIWDbNuYudy0Ji7YxsnlEsdEAqqPpeanuPQhd6S-64nFNKeGHwQxFj5BIh_01E8n-bddnt6UxGTF9XGxrGJR98wPXTAreeRj7WRMtqNDtbyM3zqvxi1DRY7HHbYEJEsTqf8gr5vMDtj38")',
               }}
             ></div>
             <div className="flex flex-col gap-4">
-              <h1 className="text-3xl md:text-4xl font-bold text-white">Our Ethos</h1>
-              <p className="text-white/80 text-base">
+              <h1 className="text-3xl md:text-4xl font-bold text-foreground">Our Ethos</h1>
+              <p className="text-foreground/80 text-base">
                 MMWAFRIKA PRIDE is built on a foundation of traditional crochet craftsmanship and artistic expression. We create unique, hand-knitted pieces that celebrate the beauty of handmade artistry.
               </p>
-              <p className="text-white/80 text-base mt-2">
+              <p className="text-foreground/80 text-base mt-2">
                 Every crochet item is lovingly handcrafted with attention to detail, ensuring quality and uniqueness that speaks to our commitment to preserving traditional crafts and celebrating creativity.
               </p>
             </div>
