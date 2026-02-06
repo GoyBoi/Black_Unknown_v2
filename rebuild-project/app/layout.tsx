@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Manrope, Playfair_Display } from 'next/font/google';
 import { CartProvider } from '@/lib/CartContext';
+import { ThemeProvider } from '@/context/ThemeContext';
 
 const manrope = Manrope({
   subsets: ['latin'],
@@ -26,14 +27,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html 
-      lang="en" 
-      className={`${manrope.variable} ${playfair.variable} dark`}
+    <html
+      lang="en"
+      className={`${manrope.variable} ${playfair.variable}`}
     >
+      <head>
+        <meta name="theme-color" content="#000000" />
+      </head>
       <body className="min-h-screen bg-background font-sans antialiased">
-        <CartProvider>
-          {children}
-        </CartProvider>
+        <ThemeProvider>
+          <CartProvider>
+            {children}
+          </CartProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

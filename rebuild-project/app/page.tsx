@@ -71,7 +71,7 @@ const HomePage = () => {
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="w-full relative min-h-[75vh] flex items-center justify-center overflow-hidden">
-          <div 
+          <div
             className="absolute inset-0 bg-cover bg-center flex flex-col items-center justify-center p-4 text-center"
             style={{
               backgroundImage: 'linear-gradient(rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.5) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCPT2peyP1bs4kKbBDrui4jNP9V8jSYMsuVifWmPfrchv4XYBOw9Ty0gAVVBEnHXmMLCkpoZsT26l2Yu9ZcaAmuWmQHJ7WgVKPDdvnl8ttSceOzMKMHA7alRvjjahbw0oC-VTp2JMWolHrcnTWr4KF8XwFl9BbwT29wAdu2iesyM7nADkp6wdyJ7n6eIGoX7aZedgZ9ZOQwnEFnjL0-sazBtDBUl9-7so-7jIXM-8SfWr9aDISFI3irMYOuDlESy7mn_7qsOQuVjDQn")',
@@ -86,7 +86,7 @@ const HomePage = () => {
               </p>
               <Link
                 href="/shop"
-                className="mt-6 mx-auto flex items-center gap-2 bg-primary text-black hover:bg-saffron-gold/90 font-bold py-3 px-6 rounded-lg transition-colors w-fit"
+                className="mt-6 mx-auto flex items-center gap-2 bg-gold text-black hover:bg-gold-light font-bold py-3 px-6 rounded-lg transition-colors w-fit"
               >
                 <span>Explore Crochet Collection</span>
                 <ArrowRightIcon className="w-5 h-5" />
@@ -98,7 +98,7 @@ const HomePage = () => {
         {/* Featured Crochet Items Section */}
         <section className="px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-8">Featured Crochet Items</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">Featured Crochet Items</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {featuredProducts.map((product) => (
                 <ProductCard key={product.id} product={product} />
@@ -108,9 +108,9 @@ const HomePage = () => {
         </section>
 
         {/* Brand Ethos Section */}
-        <section className="px-4 sm:px-6 lg:px-8 py-16 lg:py-24 bg-[#1a150e]">
+        <section className="px-4 sm:px-6 lg:px-8 py-16 lg:py-24 bg-background">
           <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div 
+            <div
               className="w-full h-96 bg-cover bg-center rounded-lg"
               style={{
                 backgroundImage: 'url("https://lh3.googleusercontent.com/aida-public/AB6AXuAZzIgq3G-HmScw4GUaFKAOfixQ5mDuGHt8SOU1XQZ7DJQR9VWLcorxgHc4_-I0jk3iPVcRbtfZd4LitjaUyr9slKGG1MjTW4Khkp-l83OLTiIHDLOzwQY6OYbWV34uN5_cIWDbNuYudy0Ji7YxsnlEsdEAqqPpeanuPQhd6S-64nFNKeGHwQxFj5BIh_01E8n-bddnt6UxGTF9XGxrGJR98wPXTAreeRj7WRMtqNDtbyM3zqvxi1DRY7HHbYEJEsTqf8gr5vMDtj38")',
@@ -131,15 +131,15 @@ const HomePage = () => {
         {/* New Crochet Creations Section */}
         <section className="px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
           <div className="max-w-7xl mx-auto">
-            <div className="flex justify-between items-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold text-white">New Crochet Creations</h2>
+            <div className="flex flex-col items-center mb-8">
+              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 text-center">New Crochet Creations</h2>
               <div className="flex gap-2">
-                <button className="p-2 rounded-full border border-white/20 text-white/80 hover:bg-white/10 transition-colors">
+                <button className="p-2 rounded-full border border-foreground/20 text-foreground/80 hover:bg-foreground/10 transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
                   </svg>
                 </button>
-                <button className="p-2 rounded-full border border-white/20 text-white/80 hover:bg-white/10 transition-colors">
+                <button className="p-2 rounded-full border border-foreground/20 text-foreground/80 hover:bg-foreground/10 transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
                     <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
                   </svg>
