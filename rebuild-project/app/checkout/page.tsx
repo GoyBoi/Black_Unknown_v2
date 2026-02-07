@@ -17,7 +17,7 @@ const CheckoutPage = () => {
       <Header />
       
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
-        <h1 className="text-3xl font-bold text-white mb-8">Checkout</h1>
+        <h1 className="text-3xl font-bold text-foreground mb-8">Checkout</h1>
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 space-y-8">
@@ -26,7 +26,7 @@ const CheckoutPage = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="email" className="block text-white/80 text-sm font-medium mb-2">Email Address</label>
+                  <label htmlFor="email" className="block text-foreground/80 text-sm font-medium mb-2">Email Address</label>
                   <input
                     type="email"
                     id="email"
@@ -246,11 +246,11 @@ const CheckoutPage = () => {
               <CartSummary />
             </Suspense>
 
-            <button className="w-full mt-6 bg-gold hover:bg-gold-light text-black font-bold py-4 px-6 rounded-lg transition-colors">
+            <button className="w-full mt-6 bg-gold hover:bg-gold-light text-background font-bold py-4 px-6 rounded-lg transition-colors">
               Complete Order
             </button>
 
-            <p className="text-center text-white/60 text-sm mt-4">
+            <p className="text-center text-foreground/60 text-sm mt-4">
               Secure Payment Gateway
             </p>
           </div>

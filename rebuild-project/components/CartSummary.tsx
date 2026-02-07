@@ -11,7 +11,7 @@ const CartSummary = () => {
   const total = subtotal + shipping + vat;
 
   return (
-    <div className="bg-background p-6 rounded-lg border border-gold/20">
+    <div className="bg-background/50 backdrop-blur-sm p-6 rounded-lg border border-foreground/20">
       <h3 className="text-xl font-bold text-foreground mb-4">Crochet Order Summary</h3>
 
       <div className="space-y-3">
