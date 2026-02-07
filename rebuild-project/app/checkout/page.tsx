@@ -220,12 +220,12 @@ const CheckoutPage = () => {
                   <div className="border border-foreground/20 rounded-lg p-4 flex items-center">
                     <input
                       type="radio"
-                      id="e-wallet"
+                      id="ozow"
                       name="payment-method"
                       className="w-5 h-5 text-gold bg-background border-foreground/20 focus:ring-gold focus:ring-offset-background mr-3"
                       onChange={() => setSelectedPaymentMethod('e-wallet')}
                     />
-                    <label htmlFor="e-wallet" className="text-foreground">E-Wallet</label>
+                    <label htmlFor="ozow" className="text-foreground">Ozow</label>
                   </div>
                   
                   <div className="border border-foreground/20 rounded-lg p-4 flex items-center">
@@ -285,31 +285,34 @@ const CheckoutPage = () => {
                   </div>
                 </div>
 
-                {/* E-Wallet Form (Hidden by default) */}
+                {/* Ozow Payment Form (Hidden by default) */}
                 <div id="e-wallet-form" className="payment-form hidden">
                   <div className="space-y-4">
                     <div>
-                      <label htmlFor="wallet-provider" className="block text-foreground/80 text-sm font-medium mb-2">Select Wallet Provider</label>
-                      <select
-                        id="wallet-provider"
-                        className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
-                      >
-                        <option value="">Choose a provider</option>
-                        <option value="zapper">Zapper</option>
-                        <option value="snapscan">SnapScan</option>
-                        <option value="payfast">PayFast</option>
-                        <option value="ozow">Ozow</option>
-                      </select>
+                      <label htmlFor="email" className="block text-foreground/80 text-sm font-medium mb-2">Email Address</label>
+                      <input
+                        type="email"
+                        id="email"
+                        className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
+                        placeholder="your.email@example.com"
+                      />
                     </div>
                     
                     <div>
-                      <label htmlFor="wallet-phone" className="block text-foreground/80 text-sm font-medium mb-2">Phone Number</label>
+                      <label htmlFor="mobile" className="block text-foreground/80 text-sm font-medium mb-2">Mobile Number</label>
                       <input
                         type="tel"
-                        id="wallet-phone"
+                        id="mobile"
                         className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
                         placeholder="+27 00 000 0000"
                       />
+                    </div>
+                    
+                    <div className="pt-4">
+                      <p className="text-foreground/80 text-sm">
+                        You will be redirected to Ozow's secure payment gateway to complete your transaction. 
+                        Once payment is confirmed, you will be returned to our site to complete your order.
+                      </p>
                     </div>
                   </div>
                 </div>
