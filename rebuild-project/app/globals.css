@@ -88,45 +88,82 @@
   background-position: 100% center;
 }
 
-/* Crochet-style text effect */
-.crochet-text {
+/* Knitted/crochet texture effect for text */
+.knitted-text {
   position: relative;
-  display: inline-block;
+  background: linear-gradient(to right, #006600, #FFD700, #FF4500);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 3s linear infinite;
   font-weight: 900;
   letter-spacing: -0.02em;
+  text-shadow: 
+    0 1px 0 rgba(255,255,255,0.1),
+    0 -1px 0 rgba(0,0,0,0.1);
+  position: relative;
 }
 
-.crochet-text::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  color: rgba(255, 255, 255, 0.1);
-  z-index: -1;
-  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
-  transform: translate(2px, 2px);
-}
-
-/* Enhanced crochet texture effect */
-.crochet-text::after {
+.knitted-text::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: 
-    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.1) 1.5px, transparent 2px),
-    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 1.5px, transparent 2px),
-    radial-gradient(circle at 80% 40%, rgba(255, 255, 255, 0.1) 1.5px, transparent 2px),
-    radial-gradient(circle at 60% 20%, rgba(255, 255, 255, 0.1) 1.5px, transparent 2px),
-    radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.1) 1.5px, transparent 2px);
-  background-size: 20px 20px;
-  z-index: -1;
+  background: 
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(255,255,255,0.1) 2px,
+      rgba(255,255,255,0.1) 4px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 2px,
+      rgba(255,255,255,0.1) 2px,
+      rgba(255,255,255,0.1) 4px
+    );
   pointer-events: none;
+  z-index: 2;
   opacity: 0.3;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 200% 50%; }
+}
+
+/* Alternative crochet texture using pattern */
+.crochet-pattern-text {
+  position: relative;
+  background: linear-gradient(to right, #006600, #FFD700, #FF4500);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradient-shift 3s linear infinite;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+.crochet-pattern-text::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    linear-gradient(90deg, transparent 50%, rgba(255,255,255, 0.05) 50%),
+    linear-gradient(transparent 50%, rgba(255,255,255, 0.05) 50%);
+  background-size: 4px 4px;
+  z-index: 1;
+  pointer-events: none;
   mix-blend-mode: overlay;
 }
 

@@ -78,7 +78,7 @@ const HomePage = () => {
             }}
           >
             <div className="flex flex-col gap-4 max-w-3xl z-10">
-              <h1 className="text-4xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#006600] via-[#FFD700] to-[#FF4500] leading-tight tracking-tight bg-size-200 bg-pos-0 hover:bg-pos-100 transition-all duration-1000 ease-in-out crochet-text" data-text="Handcrafted with Love">
+              <h1 className="text-4xl md:text-6xl font-black knitted-text leading-tight tracking-tight">
                 Handcrafted with Love
               </h1>
               <p className="text-white/90 text-base md:text-lg max-w-xl mx-auto">
