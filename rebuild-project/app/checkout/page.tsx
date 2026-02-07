@@ -138,44 +138,44 @@ const CheckoutPage = () => {
               <h2 className="text-xl font-bold text-foreground mb-6">Shipping Method</h2>
               
               <div className="space-y-4">
-                <div className="flex items-center justify-between p-4 border border-white/20 rounded-lg">
+                <div className="flex items-center justify-between p-4 border border-foreground/20 rounded-lg">
                   <div>
-                    <h3 className="font-medium text-white">Standard Delivery</h3>
-                    <p className="text-sm text-white/60">2-5 business days</p>
+                    <h3 className="font-medium text-foreground">Standard Delivery</h3>
+                    <p className="text-sm text-foreground/60">2-5 business days</p>
                   </div>
                   <div className="text-right">
-                    <p className="font-medium text-white relative inline-block">
+                    <p className="font-medium text-foreground relative inline-block">
                       <span className="relative z-10">R100.00</span>
                       <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gold/50"></span>
                     </p>
                   </div>
                   <div>
-                    <input 
-                      type="radio" 
-                      name="shipping" 
-                      id="standard" 
+                    <input
+                      type="radio"
+                      name="shipping"
+                      id="standard"
                       className="w-5 h-5 text-gold bg-background border-foreground/20 focus:ring-gold focus:ring-offset-background"
                       defaultChecked
                     />
                   </div>
                 </div>
-                
-                <div className="flex items-center justify-between p-4 border border-white/20 rounded-lg">
+
+                <div className="flex items-center justify-between p-4 border border-foreground/20 rounded-lg">
                   <div>
-                    <h3 className="font-medium text-white">Express Delivery</h3>
-                    <p className="text-sm text-white/60">1-2 business days</p>
+                    <h3 className="font-medium text-foreground">Express Delivery</h3>
+                    <p className="text-sm text-foreground/60">1-2 business days</p>
                   </div>
                   <div className="text-right">
-                    <p className="font-medium text-white relative inline-block">
+                    <p className="font-medium text-foreground relative inline-block">
                       <span className="relative z-10">R200.00</span>
                       <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gold/50"></span>
                     </p>
                   </div>
                   <div>
-                    <input 
-                      type="radio" 
-                      name="shipping" 
-                      id="express" 
+                    <input
+                      type="radio"
+                      name="shipping"
+                      id="express"
                       className="w-5 h-5 text-gold bg-background border-foreground/20 focus:ring-gold focus:ring-offset-background"
                     />
                   </div>
