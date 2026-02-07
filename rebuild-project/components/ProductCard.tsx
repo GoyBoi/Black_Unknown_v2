@@ -50,7 +50,7 @@ const ProductCard = ({ product }: { product: Product }) => {
   };
 
   return (
-    <div className="group relative flex flex-col overflow-hidden rounded-lg transition-all duration-300 hover:shadow-2xl hover:shadow-black/30 dark:hover:shadow-black/50 border border-transparent hover:border-gold/30">
+    <div className="group relative flex flex-col overflow-hidden rounded-lg transition-all duration-300 hover:shadow-2xl hover:shadow-black/30 dark:hover:shadow-black/50 border border-transparent hover:border-gold/30 h-full">
       <div className="relative aspect-[3/4] w-full bg-foreground/10">
         <img
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
@@ -60,7 +60,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         <button className="absolute top-3 right-3 z-10 p-2 bg-background/80 backdrop-blur-sm rounded-full text-foreground/80 hover:text-gold transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0">
           <HeartIcon className="w-4 h-4" />
         </button>
-        
+
         {/* Category Badge */}
         {product.category && (
           <div className="absolute top-3 left-3 bg-gold text-black text-xs font-bold px-2 py-1 rounded">
@@ -68,31 +68,31 @@ const ProductCard = ({ product }: { product: Product }) => {
           </div>
         )}
       </div>
-      <div className="flex flex-col gap-1 p-4 bg-background text-center">
+      <div className="flex flex-col gap-1 p-4 bg-background text-center flex-grow">
         <p className="text-xs font-medium uppercase tracking-wide text-foreground/70 mb-1">
           {product.brand}
         </p>
-        <Link href={`/product/${product.id}`} className="block">
-          <h3 className="text-base font-semibold leading-tight text-foreground group-hover:text-gold transition-colors duration-300 mb-1">
+        <Link href={`/product/${product.id}`} className="block flex-grow">
+          <h3 className="text-base font-semibold leading-tight text-foreground group-hover:text-gold transition-colors duration-300 mb-1 h-12 flex items-center justify-center">
             {product.name}
           </h3>
         </Link>
-        
+
         {/* Rating */}
         {product.rating && (
           <div className="flex justify-center my-1">
             {renderRating()}
           </div>
         )}
-        
+
         {/* Stock Status */}
         {product.stock !== undefined && (
           <div className={`text-xs font-medium ${product.stock > 5 ? 'text-green-500' : product.stock > 0 ? 'text-yellow-500' : 'text-red-500'}`}>
             {product.stock > 5 ? 'In Stock' : product.stock > 0 ? `Only ${product.stock} left` : 'Out of Stock'}
           </div>
         )}
-        
-        <div className="mt-2 pt-2 border-t border-foreground/20">
+
+        <div className="mt-auto pt-2 border-t border-foreground/20">
           <p className="text-lg font-bold text-foreground relative inline-block">
             <span className="relative z-10">R{product.price.toLocaleString()}</span>
             <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gold/50"></span>
