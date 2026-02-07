@@ -78,7 +78,7 @@ const HomePage = () => {
             }}
           >
             <div className="flex flex-col gap-4 max-w-3xl z-10">
-              <h1 className="text-4xl md:text-6xl font-black knitted-text leading-tight tracking-tight">
+              <h1 className="text-4xl md:text-6xl font-black animated-gradient-text leading-tight tracking-tight">
                 Handcrafted with Love
               </h1>
               <p className="text-white/90 text-base md:text-lg max-w-xl mx-auto">
