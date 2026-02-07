@@ -115,7 +115,7 @@ const Header = () => {
         </nav>
 
         {/* Mobile Menu Button - Consolidated with icons */}
-        <div className="flex items-center gap-3 md:hidden">
+        <div className="flex items-center gap-2 md:hidden">
           <button 
             onClick={() => setSearchModalOpen(true)}
             className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} p-2 rounded-full hover:bg-foreground/10 transition-colors duration-300`}
