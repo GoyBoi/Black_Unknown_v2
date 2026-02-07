@@ -95,7 +95,7 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradient-shift 3s linear infinite;
+  animation: gradient-shift 6s ease-in-out infinite alternate;
   font-weight: 900;
   letter-spacing: -0.02em;
   position: relative;
@@ -103,7 +103,7 @@
 
 @keyframes gradient-shift {
   0% { background-position: 0% 50%; }
-  100% { background-position: 200% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
 /* Custom scrollbar */
