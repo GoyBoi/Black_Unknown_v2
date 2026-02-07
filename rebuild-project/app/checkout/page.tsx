@@ -144,7 +144,10 @@ const CheckoutPage = () => {
                     <p className="text-sm text-white/60">2-5 business days</p>
                   </div>
                   <div className="text-right">
-                    <p className="font-medium text-white">R100.00</p>
+                    <p className="font-medium text-white relative inline-block">
+                      <span className="relative z-10">R100.00</span>
+                      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gold/30 -z-10"></span>
+                    </p>
                   </div>
                   <div>
                     <input 
@@ -163,7 +166,10 @@ const CheckoutPage = () => {
                     <p className="text-sm text-white/60">1-2 business days</p>
                   </div>
                   <div className="text-right">
-                    <p className="font-medium text-white">R200.00</p>
+                    <p className="font-medium text-white relative inline-block">
+                      <span className="relative z-10">R200.00</span>
+                      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gold/30 -z-10"></span>
+                    </p>
                   </div>
                   <div>
                     <input 

@@ -17,22 +17,34 @@ const CartSummary = () => {
       <div className="space-y-3">
         <div className="flex justify-between">
           <span className="text-foreground/80">Subtotal</span>
-          <span className="text-foreground">R{subtotal.toFixed(2)}</span>
+          <span className="text-foreground relative inline-block">
+            <span className="relative z-10">R{subtotal.toFixed(2)}</span>
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gold/30 -z-10"></span>
+          </span>
         </div>
 
         <div className="flex justify-between">
           <span className="text-foreground/80">Shipping</span>
-          <span className="text-foreground">R{shipping.toFixed(2)}</span>
+          <span className="text-foreground relative inline-block">
+            <span className="relative z-10">R{shipping.toFixed(2)}</span>
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gold/30 -z-10"></span>
+          </span>
         </div>
 
         <div className="flex justify-between">
           <span className="text-foreground/80">VAT (15%)</span>
-          <span className="text-foreground">R{vat.toFixed(2)}</span>
+          <span className="text-foreground relative inline-block">
+            <span className="relative z-10">R{vat.toFixed(2)}</span>
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gold/30 -z-10"></span>
+          </span>
         </div>
 
         <div className="flex justify-between pt-3 border-t border-foreground/20">
           <span className="text-foreground font-bold">Total</span>
-          <span className="text-foreground font-bold">R{total.toFixed(2)}</span>
+          <span className="text-foreground font-bold relative inline-block">
+            <span className="relative z-10">R{total.toFixed(2)}</span>
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gold/30 -z-10"></span>
+          </span>
         </div>
       </div>
     </div>
