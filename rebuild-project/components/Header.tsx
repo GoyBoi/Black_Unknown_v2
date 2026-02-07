@@ -72,9 +72,24 @@ const Header = () => {
           </Link>
         </nav>
 
-        {/* Mobile Menu Button */}
-        <div className="flex items-center gap-4 md:hidden">
-          <button 
+        {/* Mobile Menu Button - Consolidated with icons */}
+        <div className="flex items-center gap-3 md:hidden">
+          <button className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} p-2 rounded-full hover:bg-foreground/10 transition-colors duration-300`}>
+            <MagnifyingGlassIcon className="w-5 h-5" />
+          </button>
+          <button className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} p-2 rounded-full hover:bg-foreground/10 transition-colors duration-300 relative`}>
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+            </svg>
+          </button>
+          <ThemeToggle isScrolled={isScrolled} />
+          <Link href="/cart" className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} p-2 rounded-full hover:bg-gold/20 transition-colors duration-300 relative`}>
+            <ShoppingBagIcon className="w-5 h-5" />
+            <span className="absolute -top-1 -right-1 bg-gold text-black text-xs rounded-full w-5 h-5 flex items-center justify-center animate-pulse">
+              2
+            </span>
+          </Link>
+          <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} p-2 rounded-full hover:bg-foreground/10 transition-colors duration-300`}
             aria-label="Open menu"
@@ -105,94 +120,81 @@ const Header = () => {
             </span>
           </Link>
         </div>
-
-        {/* Mobile Icons */}
-        <div className="flex items-center gap-4 md:hidden">
-          <button className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} p-2 rounded-full hover:bg-foreground/10 transition-colors duration-300`}>
-            <MagnifyingGlassIcon className="w-5 h-5" />
-          </button>
-          <button className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} p-2 rounded-full hover:bg-foreground/10 transition-colors duration-300 relative`}>
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-            </svg>
-          </button>
-          <ThemeToggle isScrolled={isScrolled} />
-          <Link href="/cart" className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} p-2 rounded-full hover:bg-gold/20 transition-colors duration-300 relative`}>
-            <ShoppingBagIcon className="w-5 h-5" />
-            <span className="absolute -top-1 -right-1 bg-gold text-black text-xs rounded-full w-5 h-5 flex items-center justify-center animate-pulse">
-              2
-            </span>
-          </Link>
-        </div>
       </header>
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-background pt-16">
+        <div className="fixed inset-0 z-40 bg-background/95 backdrop-blur-md pt-16">
           <div className="flex flex-col h-full">
-            <div className="flex-1 flex flex-col items-center justify-center gap-8 py-8">
-              <Link 
-                href="/shop" 
-                className="text-2xl font-medium text-foreground hover:text-gold transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Products
-              </Link>
-              <Link 
-                href="/shop#clothes" 
-                className="text-lg text-foreground/80 hover:text-gold transition-colors pl-4"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="flex items-center">
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  Crochet Clothes
-                </span>
-              </Link>
-              <Link 
-                href="/shop#dolls" 
-                className="text-lg text-foreground/80 hover:text-gold transition-colors pl-4"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="flex items-center">
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  Amigurumi Dolls
-                </span>
-              </Link>
-              <Link 
-                href="/shop#flowers" 
-                className="text-lg text-foreground/80 hover:text-gold transition-colors pl-4"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="flex items-center">
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  Crochet Flowers
-                </span>
-              </Link>
-              <Link 
-                href="/shop#home-decor" 
-                className="text-lg text-foreground/80 hover:text-gold transition-colors pl-4"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <span className="flex items-center">
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
-                  </svg>
-                  Home Decor
-                </span>
-              </Link>
-              <Link 
-                href="/about" 
-                className="text-2xl font-medium text-foreground hover:text-gold transition-colors"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                About
-              </Link>
+            <div className="flex-1 flex flex-col py-8">
+              <div className="space-y-1 px-6">
+                <Link
+                  href="/"
+                  className="block py-4 text-xl font-medium text-foreground hover:text-gold transition-colors border-b border-foreground/10"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Home
+                </Link>
+                <Link
+                  href="/shop"
+                  className="block py-4 text-xl font-medium text-foreground hover:text-gold transition-colors border-b border-foreground/10"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Shop
+                </Link>
+                <details className="group">
+                  <summary className="py-4 text-xl font-medium text-foreground hover:text-gold transition-colors border-b border-foreground/10 list-none cursor-pointer">
+                    <span>Categories</span>
+                    <svg className="float-right w-5 h-5 mt-1 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                  </summary>
+                  <div className="pl-4 py-2 space-y-2">
+                    <Link
+                      href="/shop#clothes"
+                      className="block py-2 text-lg text-foreground/80 hover:text-gold transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Crochet Clothes
+                    </Link>
+                    <Link
+                      href="/shop#dolls"
+                      className="block py-2 text-lg text-foreground/80 hover:text-gold transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Amigurumi Dolls
+                    </Link>
+                    <Link
+                      href="/shop#flowers"
+                      className="block py-2 text-lg text-foreground/80 hover:text-gold transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Crochet Flowers
+                    </Link>
+                    <Link
+                      href="/shop#home-decor"
+                      className="block py-2 text-lg text-foreground/80 hover:text-gold transition-colors"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      Home Decor
+                    </Link>
+                  </div>
+                </details>
+                <Link
+                  href="/about"
+                  className="block py-4 text-xl font-medium text-foreground hover:text-gold transition-colors border-b border-foreground/10"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  About
+                </Link>
+                <Link
+                  href="/contact"
+                  className="block py-4 text-xl font-medium text-foreground hover:text-gold transition-colors border-b border-foreground/10"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  Contact
+                </Link>
+              </div>
             </div>
           </div>
         </div>
