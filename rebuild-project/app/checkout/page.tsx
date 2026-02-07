@@ -27,21 +27,21 @@ const CheckoutPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="email" className="block text-white/80 text-sm font-medium mb-2">Email Address</label>
-                  <input 
-                    type="email" 
-                    id="email" 
-                    className="w-full bg-background border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:ring-2 focus:ring-primary focus:border-transparent"
+                  <input
+                    type="email"
+                    id="email"
+                    className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
                     placeholder="your.email@example.com"
                   />
                 </div>
                 
                 <div className="flex items-center">
-                  <input 
-                    type="checkbox" 
-                    id="create-account" 
-                    className="w-5 h-5 text-primary bg-background border-white/20 rounded focus:ring-primary"
+                  <input
+                    type="checkbox"
+                    id="create-account"
+                    className="w-5 h-5 text-gold bg-background border-foreground/20 rounded focus:ring-gold focus:ring-offset-background"
                   />
-                  <label htmlFor="create-account" className="ml-2 text-white/80 text-sm">
+                  <label htmlFor="create-account" className="ml-2 text-foreground/80 text-sm">
                     Create an account for faster checkout
                   </label>
                 </div>
@@ -53,40 +53,40 @@ const CheckoutPage = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="md:col-span-2">
-                  <label htmlFor="fullName" className="block text-white/80 text-sm font-medium mb-2">Full Name</label>
-                  <input 
-                    type="text" 
-                    id="fullName" 
-                    className="w-full bg-background border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:ring-2 focus:ring-primary focus:border-transparent"
+                  <label htmlFor="fullName" className="block text-foreground/80 text-sm font-medium mb-2">Full Name</label>
+                  <input
+                    type="text"
+                    id="fullName"
+                    className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
                     placeholder="First and last name"
                   />
                 </div>
-                
+
                 <div className="md:col-span-2">
-                  <label htmlFor="address" className="block text-white/80 text-sm font-medium mb-2">Address</label>
-                  <input 
-                    type="text" 
-                    id="address" 
-                    className="w-full bg-background border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:ring-2 focus:ring-primary focus:border-transparent"
+                  <label htmlFor="address" className="block text-foreground/80 text-sm font-medium mb-2">Address</label>
+                  <input
+                    type="text"
+                    id="address"
+                    className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
                     placeholder="Street address"
                   />
                 </div>
-                
+
                 <div>
-                  <label htmlFor="city" className="block text-white/80 text-sm font-medium mb-2">City</label>
-                  <input 
-                    type="text" 
-                    id="city" 
-                    className="w-full bg-background border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:ring-2 focus:ring-primary focus:border-transparent"
+                  <label htmlFor="city" className="block text-foreground/80 text-sm font-medium mb-2">City</label>
+                  <input
+                    type="text"
+                    id="city"
+                    className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
                     placeholder="City"
                   />
                 </div>
-                
+
                 <div>
-                  <label htmlFor="province" className="block text-white/80 text-sm font-medium mb-2">Province</label>
-                  <select 
-                    id="province" 
-                    className="w-full bg-background border border-white/20 rounded-lg px-4 py-3 text-white focus:ring-2 focus:ring-primary focus:border-transparent"
+                  <label htmlFor="province" className="block text-foreground/80 text-sm font-medium mb-2">Province</label>
+                  <select
+                    id="province"
+                    className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
                   >
                     <option value="">Select Province</option>
                     <option value="GP">Gauteng</option>
@@ -100,35 +100,35 @@ const CheckoutPage = () => {
                     <option value="NW">North West</option>
                   </select>
                 </div>
-                
+
                 <div>
-                  <label htmlFor="postalCode" className="block text-white/80 text-sm font-medium mb-2">Postal Code</label>
-                  <input 
-                    type="text" 
-                    id="postalCode" 
-                    className="w-full bg-background border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:ring-2 focus:ring-primary focus:border-transparent"
+                  <label htmlFor="postalCode" className="block text-foreground/80 text-sm font-medium mb-2">Postal Code</label>
+                  <input
+                    type="text"
+                    id="postalCode"
+                    className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
                     placeholder="0000"
                   />
                 </div>
-                
+
                 <div className="md:col-span-2">
-                  <label htmlFor="phone" className="block text-white/80 text-sm font-medium mb-2">Phone Number</label>
-                  <input 
-                    type="tel" 
-                    id="phone" 
-                    className="w-full bg-background border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:ring-2 focus:ring-primary focus:border-transparent"
+                  <label htmlFor="phone" className="block text-foreground/80 text-sm font-medium mb-2">Phone Number</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
                     placeholder="+27 00 000 0000"
                   />
                 </div>
               </div>
               
               <div className="mt-6 flex items-center">
-                <input 
-                  type="checkbox" 
-                  id="different-address" 
-                  className="w-5 h-5 text-primary bg-background border-white/20 rounded focus:ring-primary"
+                <input
+                  type="checkbox"
+                  id="different-address"
+                  className="w-5 h-5 text-gold bg-background border-foreground/20 rounded focus:ring-gold focus:ring-offset-background"
                 />
-                <label htmlFor="different-address" className="ml-2 text-white/80 text-sm">
+                <label htmlFor="different-address" className="ml-2 text-foreground/80 text-sm">
                   Billing address is the same as shipping address
                 </label>
               </div>
@@ -154,7 +154,7 @@ const CheckoutPage = () => {
                       type="radio" 
                       name="shipping" 
                       id="standard" 
-                      className="w-5 h-5 text-primary bg-background border-white/20 focus:ring-primary"
+                      className="w-5 h-5 text-gold bg-background border-foreground/20 focus:ring-gold focus:ring-offset-background"
                       defaultChecked
                     />
                   </div>
@@ -176,7 +176,7 @@ const CheckoutPage = () => {
                       type="radio" 
                       name="shipping" 
                       id="express" 
-                      className="w-5 h-5 text-primary bg-background border-white/20 focus:ring-primary"
+                      className="w-5 h-5 text-gold bg-background border-foreground/20 focus:ring-gold focus:ring-offset-background"
                     />
                   </div>
                 </div>
@@ -188,53 +188,53 @@ const CheckoutPage = () => {
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="md:col-span-2">
-                  <label htmlFor="cardNumber" className="block text-white/80 text-sm font-medium mb-2">Card Number</label>
-                  <input 
-                    type="text" 
-                    id="cardNumber" 
-                    className="w-full bg-background border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:ring-2 focus:ring-primary focus:border-transparent"
+                  <label htmlFor="cardNumber" className="block text-foreground/80 text-sm font-medium mb-2">Card Number</label>
+                  <input
+                    type="text"
+                    id="cardNumber"
+                    className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
                     placeholder="0000 0000 0000 0000"
                   />
                 </div>
-                
+
                 <div>
-                  <label htmlFor="expiry" className="block text-white/80 text-sm font-medium mb-2">Expiry Date</label>
-                  <input 
-                    type="text" 
-                    id="expiry" 
-                    className="w-full bg-background border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:ring-2 focus:ring-primary focus:border-transparent"
+                  <label htmlFor="expiry" className="block text-foreground/80 text-sm font-medium mb-2">Expiry Date</label>
+                  <input
+                    type="text"
+                    id="expiry"
+                    className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
                     placeholder="MM/YY"
                   />
                 </div>
-                
+
                 <div>
-                  <label htmlFor="cvv" className="block text-white/80 text-sm font-medium mb-2">CVV</label>
-                  <input 
-                    type="text" 
-                    id="cvv" 
-                    className="w-full bg-background border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:ring-2 focus:ring-primary focus:border-transparent"
+                  <label htmlFor="cvv" className="block text-foreground/80 text-sm font-medium mb-2">CVV</label>
+                  <input
+                    type="text"
+                    id="cvv"
+                    className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
                     placeholder="123"
                   />
                 </div>
-                
+
                 <div className="md:col-span-2">
-                  <label htmlFor="cardName" className="block text-white/80 text-sm font-medium mb-2">Name on Card</label>
-                  <input 
-                    type="text" 
-                    id="cardName" 
-                    className="w-full bg-background border border-white/20 rounded-lg px-4 py-3 text-white placeholder-white/50 focus:ring-2 focus:ring-primary focus:border-transparent"
+                  <label htmlFor="cardName" className="block text-foreground/80 text-sm font-medium mb-2">Name on Card</label>
+                  <input
+                    type="text"
+                    id="cardName"
+                    className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
                     placeholder="As it appears on your card"
                   />
                 </div>
               </div>
               
               <div className="mt-6 flex items-center">
-                <input 
-                  type="checkbox" 
-                  id="save-card" 
-                  className="w-5 h-5 text-primary bg-background border-white/20 rounded focus:ring-primary"
+                <input
+                  type="checkbox"
+                  id="save-card"
+                  className="w-5 h-5 text-gold bg-background border-foreground/20 rounded focus:ring-gold focus:ring-offset-background"
                 />
-                <label htmlFor="save-card" className="ml-2 text-white/80 text-sm">
+                <label htmlFor="save-card" className="ml-2 text-foreground/80 text-sm">
                   Save card details for future purchases
                 </label>
               </div>
@@ -246,7 +246,7 @@ const CheckoutPage = () => {
               <CartSummary />
             </Suspense>
 
-            <button className="w-full mt-6 bg-primary hover:bg-saffron-gold/90 text-black font-bold py-4 px-6 rounded-lg transition-colors">
+            <button className="w-full mt-6 bg-gold hover:bg-gold-light text-black font-bold py-4 px-6 rounded-lg transition-colors">
               Complete Order
             </button>
 

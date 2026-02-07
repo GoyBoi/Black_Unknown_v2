@@ -16,7 +16,7 @@ const ProductDetailPage = () => {
     id: 1,
     name: 'Midnight Silk Scarf',
     price: 220,
-    description: 'The Midnight Silk Scarf is a testament to timeless elegance and unparalleled craftsmanship. Meticulously woven from the finest silk, it features an intricate pattern inspired by the enigmatic beauty of the night sky. The subtle sheen of the fabric catches light in a way that's both understated and captivating, making it a versatile piece that complements both casual and formal attire.',
+    description: "The Midnight Silk Scarf is a testament to timeless elegance and unparalleled craftsmanship. Meticulously woven from the finest silk, it features an intricate pattern inspired by the enigmatic beauty of the night sky. The subtle sheen of the fabric catches light in a way that's both understated and captivating, making it a versatile piece that complements both casual and formal attire.",
     brand: 'mmwAfrika Pride',
     images: [
       'https://lh3.googleusercontent.com/aida-public/AB6AXuCmfKkJ2Upa5XThXxyPAmV1PO_j1fyx4Ay5sGty0S27uDHPEcP5hx3a8nE_tc9D1Bj35GQAlzRzSu7XZNsOsIXWWRgVa4U_3KZGc9cxnX8xqRtpYAEsgK5qUEE2KeSNL_lCJpNpFKyfd1eFMUAxWcK3gnWIhHtlKladaVrh8BDxe-88bjEBnhQE1hHO0uOKknTvXL8ntRW6iaYzZZoexl39E5GQFVEDLRmkCpSu5Pz8cQ_ZClLYEOBxIq5SCipSL6f9xRMGqJgSeRXL',
