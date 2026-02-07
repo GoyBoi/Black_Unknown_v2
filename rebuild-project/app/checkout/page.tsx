@@ -384,9 +384,7 @@ const CheckoutPage = () => {
           </div>
           
           <div>
-            <Suspense fallback={<div className="bg-[#1a150e] p-6 rounded-lg">Loading order summary...</div>}>
-              <CartSummary />
-            </Suspense>
+            <CartSummary />
 
             <button className="w-full mt-6 bg-gold hover:bg-gold-light text-background font-bold py-4 px-6 rounded-lg transition-colors">
               Complete Order
