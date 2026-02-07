@@ -95,7 +95,7 @@ const ProductCard = ({ product }: { product: Product }) => {
         <div className="mt-2 pt-2 border-t border-foreground/20">
           <p className="text-lg font-bold text-foreground relative inline-block">
             <span className="relative z-10">R{product.price.toLocaleString()}</span>
-            <span className="absolute bottom-0 left-0 w-full h-1 bg-gold/30 -z-10"></span>
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gold/50"></span>
           </p>
         </div>
       </div>

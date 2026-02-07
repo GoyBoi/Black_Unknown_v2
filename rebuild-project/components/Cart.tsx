@@ -102,7 +102,7 @@ const Cart = () => {
 
                   <p className="text-right text-base font-medium text-foreground sm:min-w-[6rem] relative inline-block">
                     <span className="relative z-10">R{(item.price * item.quantity).toLocaleString()}</span>
-                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gold/30 -z-10"></span>
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gold/50"></span>
                   </p>
 
                   <button

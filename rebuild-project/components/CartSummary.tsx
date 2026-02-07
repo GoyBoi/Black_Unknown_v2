@@ -19,7 +19,7 @@ const CartSummary = () => {
           <span className="text-foreground/80">Subtotal</span>
           <span className="text-foreground relative inline-block">
             <span className="relative z-10">R{subtotal.toFixed(2)}</span>
-            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gold/30 -z-10"></span>
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gold/50"></span>
           </span>
         </div>
 
@@ -27,7 +27,7 @@ const CartSummary = () => {
           <span className="text-foreground/80">Shipping</span>
           <span className="text-foreground relative inline-block">
             <span className="relative z-10">R{shipping.toFixed(2)}</span>
-            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gold/30 -z-10"></span>
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gold/50"></span>
           </span>
         </div>
 
@@ -35,7 +35,7 @@ const CartSummary = () => {
           <span className="text-foreground/80">VAT (15%)</span>
           <span className="text-foreground relative inline-block">
             <span className="relative z-10">R{vat.toFixed(2)}</span>
-            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gold/30 -z-10"></span>
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gold/50"></span>
           </span>
         </div>
 
@@ -43,7 +43,7 @@ const CartSummary = () => {
           <span className="text-foreground font-bold">Total</span>
           <span className="text-foreground font-bold relative inline-block">
             <span className="relative z-10">R{total.toFixed(2)}</span>
-            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gold/30 -z-10"></span>
+            <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gold/50"></span>
           </span>
         </div>
       </div>
