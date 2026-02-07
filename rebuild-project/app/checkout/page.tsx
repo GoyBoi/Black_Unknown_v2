@@ -1,6 +1,6 @@
 'use client';
 
-import React, { Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import dynamic from 'next/dynamic';
@@ -8,14 +8,30 @@ import dynamic from 'next/dynamic';
 // Dynamically import CartSummary to ensure it's only rendered on the client-side
 const CartSummary = dynamic(() => import('@/components/CartSummary'), {
   ssr: false,
-  loading: () => <div className="bg-[#1a150e] p-6 rounded-lg">Loading order summary...</div>
+  loading: () => <div className="bg-background/50 backdrop-blur-sm p-6 rounded-lg border border-foreground/20">Loading order summary...</div>
 });
 
 const CheckoutPage = () => {
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('credit-card');
+
+  useEffect(() => {
+    // Hide all payment forms initially
+    const forms = document.querySelectorAll('.payment-form');
+    forms.forEach(form => {
+      (form as HTMLElement).classList.add('hidden');
+    });
+    
+    // Show the selected payment method form
+    const selectedForm = document.getElementById(`${selectedPaymentMethod}-form`);
+    if (selectedForm) {
+      selectedForm.classList.remove('hidden');
+    }
+  }, [selectedPaymentMethod]);
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       <Header />
-      
+
       <main className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
         <h1 className="text-3xl font-bold text-foreground mb-8">Checkout</h1>
         
@@ -185,58 +201,184 @@ const CheckoutPage = () => {
             
             <div className="bg-background/50 backdrop-blur-sm p-6 rounded-lg border border-foreground/20">
               <h2 className="text-xl font-bold text-foreground mb-6">Payment Method</h2>
-              
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="md:col-span-2">
-                  <label htmlFor="cardNumber" className="block text-foreground/80 text-sm font-medium mb-2">Card Number</label>
-                  <input
-                    type="text"
-                    id="cardNumber"
-                    className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
-                    placeholder="0000 0000 0000 0000"
-                  />
+
+              <div className="space-y-6">
+                {/* Payment Method Selection */}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  <div className="border border-foreground/20 rounded-lg p-4 flex items-center">
+                    <input
+                      type="radio"
+                      id="credit-card"
+                      name="payment-method"
+                      className="w-5 h-5 text-gold bg-background border-foreground/20 focus:ring-gold focus:ring-offset-background mr-3"
+                      defaultChecked
+                      onChange={() => setSelectedPaymentMethod('credit-card')}
+                    />
+                    <label htmlFor="credit-card" className="text-foreground">Credit Card</label>
+                  </div>
+                  
+                  <div className="border border-foreground/20 rounded-lg p-4 flex items-center">
+                    <input
+                      type="radio"
+                      id="e-wallet"
+                      name="payment-method"
+                      className="w-5 h-5 text-gold bg-background border-foreground/20 focus:ring-gold focus:ring-offset-background mr-3"
+                      onChange={() => setSelectedPaymentMethod('e-wallet')}
+                    />
+                    <label htmlFor="e-wallet" className="text-foreground">E-Wallet</label>
+                  </div>
+                  
+                  <div className="border border-foreground/20 rounded-lg p-4 flex items-center">
+                    <input
+                      type="radio"
+                      id="bank-transfer"
+                      name="payment-method"
+                      className="w-5 h-5 text-gold bg-background border-foreground/20 focus:ring-gold focus:ring-offset-background mr-3"
+                      onChange={() => setSelectedPaymentMethod('bank-transfer')}
+                    />
+                    <label htmlFor="bank-transfer" className="text-foreground">Bank Transfer</label>
+                  </div>
                 </div>
 
-                <div>
-                  <label htmlFor="expiry" className="block text-foreground/80 text-sm font-medium mb-2">Expiry Date</label>
-                  <input
-                    type="text"
-                    id="expiry"
-                    className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
-                    placeholder="MM/YY"
-                  />
+                {/* Credit Card Form */}
+                <div id="credit-card-form" className="payment-form">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="md:col-span-2">
+                      <label htmlFor="cardNumber" className="block text-foreground/80 text-sm font-medium mb-2">Card Number</label>
+                      <input
+                        type="text"
+                        id="cardNumber"
+                        className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
+                        placeholder="0000 0000 0000 0000"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="expiry" className="block text-foreground/80 text-sm font-medium mb-2">Expiry Date</label>
+                      <input
+                        type="text"
+                        id="expiry"
+                        className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
+                        placeholder="MM/YY"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="cvv" className="block text-foreground/80 text-sm font-medium mb-2">CVV</label>
+                      <input
+                        type="text"
+                        id="cvv"
+                        className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
+                        placeholder="123"
+                      />
+                    </div>
+
+                    <div className="md:col-span-2">
+                      <label htmlFor="cardName" className="block text-foreground/80 text-sm font-medium mb-2">Name on Card</label>
+                      <input
+                        type="text"
+                        id="cardName"
+                        className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
+                        placeholder="As it appears on your card"
+                      />
+                    </div>
+                  </div>
                 </div>
 
-                <div>
-                  <label htmlFor="cvv" className="block text-foreground/80 text-sm font-medium mb-2">CVV</label>
-                  <input
-                    type="text"
-                    id="cvv"
-                    className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
-                    placeholder="123"
-                  />
+                {/* E-Wallet Form (Hidden by default) */}
+                <div id="e-wallet-form" className="payment-form hidden">
+                  <div className="space-y-4">
+                    <div>
+                      <label htmlFor="wallet-provider" className="block text-foreground/80 text-sm font-medium mb-2">Select Wallet Provider</label>
+                      <select
+                        id="wallet-provider"
+                        className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
+                      >
+                        <option value="">Choose a provider</option>
+                        <option value="zapper">Zapper</option>
+                        <option value="snapscan">SnapScan</option>
+                        <option value="payfast">PayFast</option>
+                        <option value="ozow">Ozow</option>
+                      </select>
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="wallet-phone" className="block text-foreground/80 text-sm font-medium mb-2">Phone Number</label>
+                      <input
+                        type="tel"
+                        id="wallet-phone"
+                        className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
+                        placeholder="+27 00 000 0000"
+                      />
+                    </div>
+                  </div>
                 </div>
 
-                <div className="md:col-span-2">
-                  <label htmlFor="cardName" className="block text-foreground/80 text-sm font-medium mb-2">Name on Card</label>
-                  <input
-                    type="text"
-                    id="cardName"
-                    className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
-                    placeholder="As it appears on your card"
-                  />
+                {/* Bank Transfer Form (Hidden by default) */}
+                <div id="bank-transfer-form" className="payment-form hidden">
+                  <div className="space-y-4">
+                    <div>
+                      <label htmlFor="bank-name" className="block text-foreground/80 text-sm font-medium mb-2">Bank Name</label>
+                      <select
+                        id="bank-name"
+                        className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
+                      >
+                        <option value="">Select your bank</option>
+                        <option value="absa">Absa</option>
+                        <option value="fmb">First National Bank (FNB)</option>
+                        <option value="nedbank">Nedbank</option>
+                        <option value="standard-bank">Standard Bank</option>
+                        <option value="capitec">Capitec Bank</option>
+                        <option value="bidvest">Bidvest Bank</option>
+                      </select>
+                    </div>
+                    
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label htmlFor="account-number" className="block text-foreground/80 text-sm font-medium mb-2">Account Number</label>
+                        <input
+                          type="text"
+                          id="account-number"
+                          className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
+                          placeholder="Account number"
+                        />
+                      </div>
+                      
+                      <div>
+                        <label htmlFor="account-type" className="block text-foreground/80 text-sm font-medium mb-2">Account Type</label>
+                        <select
+                          id="account-type"
+                          className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
+                        >
+                          <option value="savings">Savings</option>
+                          <option value="current">Current</option>
+                        </select>
+                      </div>
+                    </div>
+                    
+                    <div>
+                      <label htmlFor="reference" className="block text-foreground/80 text-sm font-medium mb-2">Reference</label>
+                      <input
+                        type="text"
+                        id="reference"
+                        className="w-full bg-background border border-foreground/20 rounded-lg px-4 py-3 text-foreground placeholder-foreground/50 focus:ring-2 focus:ring-gold focus:border-gold focus:outline-none"
+                        placeholder="Use your order number as reference"
+                        readOnly
+                      />
+                    </div>
+                  </div>
                 </div>
-              </div>
-              
-              <div className="mt-6 flex items-center">
-                <input
-                  type="checkbox"
-                  id="save-card"
-                  className="w-5 h-5 text-gold bg-background border-foreground/20 rounded focus:ring-gold focus:ring-offset-background"
-                />
-                <label htmlFor="save-card" className="ml-2 text-foreground/80 text-sm">
-                  Save card details for future purchases
-                </label>
+
+                <div className="mt-6 flex items-center">
+                  <input
+                    type="checkbox"
+                    id="save-payment"
+                    className="w-5 h-5 text-gold bg-background border-foreground/20 rounded focus:ring-gold focus:ring-offset-background"
+                  />
+                  <label htmlFor="save-payment" className="ml-2 text-foreground/80 text-sm">
+                    Save payment details for future purchases
+                  </label>
+                </div>
               </div>
             </div>
           </div>
