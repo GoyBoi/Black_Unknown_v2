@@ -21,8 +21,8 @@ const CheckoutPage = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 space-y-8">
-            <div className="bg-[#1a150e] p-6 rounded-lg">
-              <h2 className="text-xl font-bold text-white mb-6">Contact Information</h2>
+            <div className="bg-background/50 backdrop-blur-sm p-6 rounded-lg border border-foreground/20">
+              <h2 className="text-xl font-bold text-foreground mb-6">Contact Information</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
@@ -48,8 +48,8 @@ const CheckoutPage = () => {
               </div>
             </div>
             
-            <div className="bg-[#1a150e] p-6 rounded-lg">
-              <h2 className="text-xl font-bold text-white mb-6">Shipping Address</h2>
+            <div className="bg-background/50 backdrop-blur-sm p-6 rounded-lg border border-foreground/20">
+              <h2 className="text-xl font-bold text-foreground mb-6">Shipping Address</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="md:col-span-2">
@@ -134,8 +134,8 @@ const CheckoutPage = () => {
               </div>
             </div>
             
-            <div className="bg-[#1a150e] p-6 rounded-lg">
-              <h2 className="text-xl font-bold text-white mb-6">Shipping Method</h2>
+            <div className="bg-background/50 backdrop-blur-sm p-6 rounded-lg border border-foreground/20">
+              <h2 className="text-xl font-bold text-foreground mb-6">Shipping Method</h2>
               
               <div className="space-y-4">
                 <div className="flex items-center justify-between p-4 border border-white/20 rounded-lg">
@@ -183,8 +183,8 @@ const CheckoutPage = () => {
               </div>
             </div>
             
-            <div className="bg-[#1a150e] p-6 rounded-lg">
-              <h2 className="text-xl font-bold text-white mb-6">Payment Method</h2>
+            <div className="bg-background/50 backdrop-blur-sm p-6 rounded-lg border border-foreground/20">
+              <h2 className="text-xl font-bold text-foreground mb-6">Payment Method</h2>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div className="md:col-span-2">
