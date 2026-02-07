@@ -22,8 +22,50 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const [searchModalOpen, setSearchModalOpen] = useState(false);
+  const [wishlistOpen, setWishlistOpen] = useState(false);
+
   return (
     <>
+      {/* Search Modal */}
+      {searchModalOpen && (
+        <div className="fixed inset-0 z-50 bg-background/90 backdrop-blur-md flex items-start justify-center pt-24 px-4">
+          <div className="w-full max-w-2xl bg-background border border-foreground/20 rounded-lg p-6 relative">
+            <button 
+              onClick={() => setSearchModalOpen(false)}
+              className="absolute top-4 right-4 p-2 rounded-full hover:bg-foreground/10 transition-colors"
+            >
+              <XMarkIcon className="w-5 h-5 text-foreground" />
+            </button>
+            <div className="flex items-center gap-3">
+              <MagnifyingGlassIcon className="w-6 h-6 text-foreground/60" />
+              <input
+                type="text"
+                placeholder="Search MMWAFRIKA PRIDE..."
+                className="w-full bg-transparent text-foreground text-xl placeholder-foreground/60 focus:outline-none"
+                autoFocus
+              />
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Wishlist Modal */}
+      {wishlistOpen && (
+        <div className="fixed inset-0 z-50 bg-background/90 backdrop-blur-md flex items-start justify-center pt-24 px-4">
+          <div className="w-full max-w-2xl bg-background border border-foreground/20 rounded-lg p-6 relative">
+            <button 
+              onClick={() => setWishlistOpen(false)}
+              className="absolute top-4 right-4 p-2 rounded-full hover:bg-foreground/10 transition-colors"
+            >
+              <XMarkIcon className="w-5 h-5 text-foreground" />
+            </button>
+            <h2 className="text-2xl font-bold text-foreground mb-6">Your Wishlist</h2>
+            <div className="text-foreground/80">Your wishlist items will appear here.</div>
+          </div>
+        </div>
+      )}
+
       <header
         className={`fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 sm:px-6 md:px-10 py-3 backdrop-blur-md transition-all duration-300 ${
           isScrolled
@@ -74,10 +116,16 @@ const Header = () => {
 
         {/* Mobile Menu Button - Consolidated with icons */}
         <div className="flex items-center gap-3 md:hidden">
-          <button className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} p-2 rounded-full hover:bg-foreground/10 transition-colors duration-300`}>
+          <button 
+            onClick={() => setSearchModalOpen(true)}
+            className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} p-2 rounded-full hover:bg-foreground/10 transition-colors duration-300`}
+          >
             <MagnifyingGlassIcon className="w-5 h-5" />
           </button>
-          <button className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} p-2 rounded-full hover:bg-foreground/10 transition-colors duration-300 relative`}>
+          <button 
+            onClick={() => setWishlistOpen(true)}
+            className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} p-2 rounded-full hover:bg-foreground/10 transition-colors duration-300 relative`}
+          >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
             </svg>
@@ -104,10 +152,16 @@ const Header = () => {
 
         {/* Desktop Icons */}
         <div className="hidden md:flex items-center gap-4">
-          <button className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} p-2 rounded-full hover:bg-foreground/10 transition-colors duration-300`}>
+          <button 
+            onClick={() => setSearchModalOpen(true)}
+            className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} p-2 rounded-full hover:bg-foreground/10 transition-colors duration-300`}
+          >
             <MagnifyingGlassIcon className="w-5 h-5" />
           </button>
-          <button className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} p-2 rounded-full hover:bg-foreground/10 transition-colors duration-300 relative`}>
+          <button 
+            onClick={() => setWishlistOpen(true)}
+            className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} p-2 rounded-full hover:bg-foreground/10 transition-colors duration-300 relative`}
+          >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
             </svg>
