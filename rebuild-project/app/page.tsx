@@ -96,13 +96,27 @@ const HomePage = () => {
         </section>
 
         {/* Featured Crochet Items Section */}
-        <section className="px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-          <div className="max-w-7xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8 text-center">Featured Crochet Items</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <section className="px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative overflow-hidden">
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-gold rounded-full mix-blend-soft-light filter blur-3xl opacity-20"></div>
+            <div className="absolute bottom-1/3 right-1/4 w-72 h-72 bg-[#006600] rounded-full mix-blend-soft-light filter blur-3xl opacity-20"></div>
+          </div>
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">Featured Crochet Items</h2>
+              <div className="w-24 h-1 bg-gold mx-auto"></div>
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredProducts.map((product) => (
-                <ProductCard key={product.id} product={product} />
+                <div key={product.id} className="transition-transform duration-500 hover:-translate-y-2">
+                  <ProductCard key={product.id} product={product} />
+                </div>
               ))}
+            </div>
+            <div className="text-center mt-12">
+              <Link href="/shop" className="inline-block bg-transparent border-2 border-gold text-gold hover:bg-gold hover:text-black font-bold py-3 px-8 rounded-lg transition-colors duration-300">
+                View All Products
+              </Link>
             </div>
           </div>
         </section>
@@ -129,27 +143,31 @@ const HomePage = () => {
         </section>
 
         {/* New Crochet Creations Section */}
-        <section className="px-4 sm:px-6 lg:px-8 py-16 lg:py-24">
-          <div className="max-w-7xl mx-auto">
-            <div className="flex flex-col items-center mb-8">
-              <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-4 text-center">New Crochet Creations</h2>
-              <div className="flex gap-2">
-                <button className="p-2 rounded-full border border-foreground/20 text-foreground/80 hover:bg-foreground/10 transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                </button>
-                <button className="p-2 rounded-full border border-foreground/20 text-foreground/80 hover:bg-foreground/10 transition-colors">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                    <path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clipRule="evenodd" />
-                  </svg>
-                </button>
-              </div>
+        <section className="px-4 sm:px-6 lg:px-8 py-16 lg:py-24 relative overflow-hidden">
+          <div className="absolute inset-0 opacity-5">
+            <div className="absolute top-1/3 right-1/3 w-80 h-80 bg-[#FF4500] rounded-full mix-blend-soft-light filter blur-3xl opacity-20"></div>
+            <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-gold rounded-full mix-blend-soft-light filter blur-3xl opacity-20"></div>
+          </div>
+          <div className="max-w-7xl mx-auto relative z-10">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">New Crochet Creations</h2>
+              <div className="w-24 h-1 bg-gold mx-auto mb-8"></div>
+              <p className="text-foreground/80 max-w-2xl mx-auto mb-10">Discover our latest handcrafted crochet items, each piece carefully knitted with attention to detail and love.</p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {newArrivals.map((product) => (
-                <ProductCard key={product.id} product={product} />
+                <div key={product.id} className="transition-transform duration-500 hover:-translate-y-2">
+                  <ProductCard key={product.id} product={product} />
+                </div>
               ))}
+            </div>
+            <div className="flex justify-center mt-12">
+              <Link href="/shop#new-arrivals" className="inline-flex items-center gap-2 bg-transparent border-2 border-gold text-gold hover:bg-gold hover:text-black font-bold py-3 px-8 rounded-lg transition-colors duration-300">
+                <span>View New Arrivals</span>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                  <path fillRule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+                </svg>
+              </Link>
             </div>
           </div>
         </section>
