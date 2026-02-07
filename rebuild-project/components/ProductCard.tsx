@@ -51,12 +51,14 @@ const ProductCard = ({ product }: { product: Product }) => {
 
   return (
     <div className="group relative flex flex-col overflow-hidden rounded-lg transition-all duration-300 hover:shadow-2xl hover:shadow-black/30 dark:hover:shadow-black/50 border border-transparent hover:border-gold/30 h-full">
-      <div className="relative aspect-[3/4] w-full bg-foreground/10">
+      <div className="relative aspect-[3/4] w-full bg-gradient-to-br from-stone-800 via-stone-900 to-stone-800">
         <img
           className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           src={product.image}
           alt={product.name}
         />
+        {/* Placeholder pattern for when image fails to load */}
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIj48ZyBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMzMzMiPjxwYXRoIGQ9Ik04MCA0MGwtNDAgNDBMNCA0MEw0NCBMMTAgMEw0MCA0MGwyMC0yMEw4MCA0MHoiIG9wYWNpdHk9Ii4xIi8+PHBhdGggZD0iTTAgNDBsNDAgLTQwbDQwIDQwTDQwIDgweiIgb3BhY2l0eT0iLjEiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20"></div>
         <button className="absolute top-3 right-3 z-10 p-2 bg-background/80 backdrop-blur-sm rounded-full text-foreground/80 hover:text-gold transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0">
           <HeartIcon className="w-4 h-4" />
         </button>

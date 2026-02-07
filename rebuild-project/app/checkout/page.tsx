@@ -8,7 +8,31 @@ import dynamic from 'next/dynamic';
 // Dynamically import CartSummary to ensure it's only rendered on the client-side
 const CartSummary = dynamic(() => import('@/components/CartSummary'), {
   ssr: false,
-  loading: () => <div className="bg-background/50 backdrop-blur-sm p-6 rounded-lg border border-foreground/20">Loading order summary...</div>
+  loading: () => (
+    <div className="bg-background/50 backdrop-blur-sm p-6 rounded-lg border border-foreground/20">
+      <div className="animate-pulse">
+        <div className="h-6 bg-foreground/20 rounded w-1/3 mb-6"></div>
+        <div className="space-y-3">
+          <div className="flex justify-between">
+            <div className="h-4 bg-foreground/20 rounded w-1/4"></div>
+            <div className="h-4 bg-foreground/20 rounded w-1/6"></div>
+          </div>
+          <div className="flex justify-between">
+            <div className="h-4 bg-foreground/20 rounded w-1/4"></div>
+            <div className="h-4 bg-foreground/20 rounded w-1/6"></div>
+          </div>
+          <div className="flex justify-between">
+            <div className="h-4 bg-foreground/20 rounded w-1/4"></div>
+            <div className="h-4 bg-foreground/20 rounded w-1/6"></div>
+          </div>
+          <div className="flex justify-between pt-3 border-t border-foreground/20 mt-3">
+            <div className="h-5 bg-foreground/20 rounded w-1/4 font-bold"></div>
+            <div className="h-5 bg-foreground/20 rounded w-1/6 font-bold"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
 });
 
 const CheckoutPage = () => {
