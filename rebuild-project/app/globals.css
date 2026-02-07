@@ -75,6 +75,61 @@
   }
 }
 
+/* Custom classes for animated text gradients */
+.bg-size-200 {
+  background-size: 200% auto;
+}
+
+.bg-pos-0 {
+  background-position: 0% center;
+}
+
+.hover\:bg-pos-100:hover {
+  background-position: 100% center;
+}
+
+/* Crochet-style text effect */
+.crochet-text {
+  position: relative;
+  display: inline-block;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
+
+.crochet-text::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: rgba(255, 255, 255, 0.1);
+  z-index: -1;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  transform: translate(2px, 2px);
+}
+
+/* Enhanced crochet texture effect */
+.crochet-text::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(255, 255, 255, 0.1) 1.5px, transparent 2px),
+    radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.1) 1.5px, transparent 2px),
+    radial-gradient(circle at 80% 40%, rgba(255, 255, 255, 0.1) 1.5px, transparent 2px),
+    radial-gradient(circle at 60% 20%, rgba(255, 255, 255, 0.1) 1.5px, transparent 2px),
+    radial-gradient(circle at 40% 60%, rgba(255, 255, 255, 0.1) 1.5px, transparent 2px);
+  background-size: 20px 20px;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.3;
+  mix-blend-mode: overlay;
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
