@@ -59,7 +59,7 @@ const Cart = () => {
 
   return (
     <div className="min-h-screen bg-background text-foreground pb-32">
-      <div className="max-w-4xl mx-auto px-4 py-12">
+      <div className="max-w-4xl mx-auto px-4 pt-24 pb-12">
         <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight tracking-tight text-foreground mb-12">
           My Bag ({cartItems.length} {cartItems.length === 1 ? 'item' : 'items'})
         </h2>
