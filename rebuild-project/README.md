@@ -1,18 +1,22 @@
-# MMWAFRIKA PRIDE - Luxury Fashion E-commerce
+# MMWAFRIKA PRIDE - Luxury Crochet E-commerce
 
-MMWAFRIKA PRIDE is a handcrafted crochet e-commerce platform featuring beautiful hand-knitted items from clothes to dolls and flowers. This Next.js application showcases our exquisite crochet creations with a modern UI, responsive design, and full e-commerce functionality.
+MMWAFRIKA PRIDE is a premium handcrafted crochet e-commerce platform featuring beautiful hand-knitted items from clothes to dolls and flowers. This Next.js application showcases our exquisite crochet creations with a modern UI, responsive design, and full e-commerce functionality.
 
 ## Features
 
 - Next.js 14 with App Router
 - TailwindCSS for styling
 - Responsive design for all devices
-- Dark mode support
-- Product catalog with filtering and search
-- Shopping cart functionality
+- Dual theme support (light/dark mode)
+- Product catalog with advanced filtering and search
+- Shopping cart and wishlist functionality
 - Product detail pages
 - About and contact pages
 - South African market focus
+- Rastafarian-inspired color scheme with gold accents
+- Enhanced product cards with crochet texture effects
+- Improved mobile navigation with collapsible menu
+- Optimized performance and SEO
 
 ## Tech Stack
 
@@ -20,6 +24,7 @@ MMWAFRIKA PRIDE is a handcrafted crochet e-commerce platform featuring beautiful
 - **Language**: TypeScript
 - **Styling**: TailwindCSS
 - **Icons**: Heroicons and Lucide React
+- **State Management**: React Context API
 - **Package Manager**: npm/yarn/pnpm
 
 ## Getting Started
@@ -52,13 +57,36 @@ NEXT_PUBLIC_BASE_URL=http://localhost:3000
 │   ├── product/[id]/     # Dynamic product pages
 │   ├── shop/             # Product listing page
 │   ├── about/            # About page
+│   ├── wishlist/         # Wishlist page
 │   ├── layout.tsx        # Root layout
 │   ├── page.tsx          # Homepage
 ├── components/          # Reusable UI components
+├── context/             # React Context providers
 ├── lib/                 # Utility functions
 ├── public/              # Static assets
-└── styles/              # Global styles
+└── app/                 # Global styles and configuration
 ```
+
+## Recent Improvements
+
+### UI/UX Enhancements
+- **Enhanced Product Cards**: Improved product cards with better typography, hover animations, and visual hierarchy
+- **Mobile Navigation**: Improved mobile menu with collapsible categories and better organization
+- **Color Scheme**: Implemented Rastafarian-inspired color palette with gold accents
+- **Text Styling**: Added crochet-style text effects with animated gradients
+- **Section Layouts**: Enhanced featured and new arrivals sections with better visual elements
+
+### Functionality Improvements
+- **Search Feature**: Added functional search modal with proper UI
+- **Wishlist Feature**: Implemented wishlist functionality with modal display
+- **Theme Toggle**: Fully functional light/dark mode toggle
+- **Responsive Design**: Improved mobile and tablet responsiveness
+- **Accessibility**: Enhanced accessibility features throughout the site
+
+### Performance Improvements
+- **Optimized Images**: Better image loading and optimization
+- **Code Splitting**: Improved code splitting for faster loading
+- **Bundle Size**: Reduced bundle size for better performance
 
 ## Deployment
 
@@ -66,6 +94,6 @@ This app is ready for deployment on Vercel, Netlify, or any other platform that 
 
 ## About MMWAFRIKA PRIDE
 
-MMWAFRIKA PRIDE represents the art of anonymity in fashion, where subtlety and craftsmanship take precedence over ostentatious display. We create pieces that speak to the discerning individual who values quality and timeless design over fleeting trends.
+MMWAFRIKA PRIDE represents the art of traditional crochet craftsmanship, where skill and creativity take precedence over mass production. We create unique, hand-knitted pieces that celebrate the beauty of handmade artistry and preserve traditional crafts for future generations.
 
 © {new Date().getFullYear()} MMWAFRIKA PRIDE. All Rights Reserved.
