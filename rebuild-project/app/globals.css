@@ -88,22 +88,15 @@
   background-position: 100% center;
 }
 
-/* Animated gradient text with Rastafarian colors */
+/* Static gradient text with Rastafarian colors */
 .animated-gradient-text {
   background: linear-gradient(to right, #006600, #FFD700, #FF4500);
-  background-size: 200% auto;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: gradient-shift 6s ease-in-out infinite alternate;
   font-weight: 900;
   letter-spacing: -0.02em;
   position: relative;
-}
-
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
 }
 
 /* Custom scrollbar */
