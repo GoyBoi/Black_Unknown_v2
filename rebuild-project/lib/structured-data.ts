@@ -118,7 +118,7 @@ export const generateBreadcrumbs = (breadcrumbs: { name: string; url?: string }[
       '@type': 'ListItem',
       position: index + 1,
       name: crumb.name,
-      ...(crumb.url && { item: `https://mmwafrikapride.com${crumb.url}` })
+      ...(crumb.url && { item: `https://mmwafrika.com${crumb.url}` })
     }))
   };
 };
@@ -188,8 +188,8 @@ export const generateOrganizationSchema = (): OrganizationStructuredData => {
     '@type': 'Organization',
     legalName: 'MMWAFRIKA PRIDE',
     name: 'MMWAFRIKA PRIDE',
-    url: 'https://mmwafrikapride.com',
-    logo: 'https://mmwafrikapride.com/logo.png',
+    url: 'https://mmwafrika.com',
+    logo: 'https://mmwafrika.com/logo.png',
     foundingDate: '2020',
     contactPoint: [
       {
@@ -208,9 +208,9 @@ export const generateOrganizationSchema = (): OrganizationStructuredData => {
       addressCountry: 'ZA'
     },
     sameAs: [
-      'https://www.facebook.com/mmwafrikapride',
-      'https://www.instagram.com/mmwafrikapride',
-      'https://twitter.com/mmwafrikapride'
+      'https://www.facebook.com/mmwafrika',
+      'https://www.instagram.com/mmwafrika',
+      'https://twitter.com/mmwafrika'
     ]
   };
 };

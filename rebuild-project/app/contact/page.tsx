@@ -20,7 +20,7 @@ const ContactPage = () => {
             <div className="space-y-6">
               <div>
                 <h3 className="text-lg font-bold text-white mb-2">Customer Care</h3>
-                <p className="text-white/80">support@mmwafrikapride.co.za</p>
+                <p className="text-white/80">support@mmwafrika.com</p>
                 <p className="text-white/80">+27 11 123 4567</p>
               </div>
               

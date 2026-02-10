@@ -74,9 +74,9 @@ const Footer = () => {
           <div>
             <h3 className="font-bold text-foreground mb-4">Connect</h3>
             <ul className="space-y-2 text-sm">
-              <li><a className="hover:text-gold transition-colors block" href="https://instagram.com/mmwafrikapride" target="_blank" rel="noopener noreferrer">Instagram</a></li>
-              <li><a className="hover:text-gold transition-colors block" href="https://twitter.com/mmwafrikapride" target="_blank" rel="noopener noreferrer">Twitter</a></li>
-              <li><a className="hover:text-gold transition-colors block" href="https://facebook.com/mmwafrikapride" target="_blank" rel="noopener noreferrer">Facebook</a></li>
+              <li><a className="hover:text-gold transition-colors block" href="https://instagram.com/mmwafrika" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+              <li><a className="hover:text-gold transition-colors block" href="https://twitter.com/mmwafrika" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+              <li><a className="hover:text-gold transition-colors block" href="https://facebook.com/mmwafrika" target="_blank" rel="noopener noreferrer">Facebook</a></li>
             </ul>
           </div>
 

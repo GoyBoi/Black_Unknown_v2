@@ -85,12 +85,12 @@ const SchemaValidationTool = () => {
         "@context": "https://schema.org",
         "@type": "Organization",
         "name": "MMWAFRIKA PRIDE",
-        "url": "https://mmwafrikapride.com",
-        "logo": "https://mmwafrikapride.com/logo.png",
+        "url": "https://mmwafrika.com",
+        "logo": "https://mmwafrika.com/logo.png",
         "sameAs": [
-          "https://www.facebook.com/mmwafrikapride",
-          "https://www.instagram.com/mmwafrikapride",
-          "https://twitter.com/mmwafrikapride"
+          "https://www.facebook.com/mmwafrika",
+          "https://www.instagram.com/mmwafrika",
+          "https://twitter.com/mmwafrika"
         ],
         "contactPoint": [
           {

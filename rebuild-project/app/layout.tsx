@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   description: 'Discover our exquisite collection of hand-knitted crochet items, from elegant clothes to adorable dolls and beautiful flowers, crafted with love and attention to detail.',
   keywords: ['crochet', 'handmade', 'crafts', 'fashion', 'accessories', 'South Africa', 'artisan', 'sustainable fashion'],
-  authors: [{ name: 'MMWAFRIKA PRIDE', url: 'https://mmwafrikapride.com' }],
+  authors: [{ name: 'MMWAFRIKA PRIDE', url: 'https://mmwafrika.com' }],
   creator: 'MMWAFRIKA PRIDE',
   publisher: 'MMWAFRIKA PRIDE',
   formatDetection: {
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://mmwafrikapride.com',
+    url: 'https://mmwafrika.com',
     title: 'MMWAFRIKA PRIDE - Handcrafted Crochet Creations',
     description: 'Discover our exquisite collection of hand-knitted crochet items, from elegant clothes to adorable dolls and beautiful flowers, crafted with love and attention to detail.',
     siteName: 'MMWAFRIKA PRIDE',
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: 'MMWAFRIKA PRIDE - Handcrafted Crochet Creations',
     description: 'Discover our exquisite collection of hand-knitted crochet items, from elegant clothes to adorable dolls and beautiful flowers, crafted with love and attention to detail.',
     images: ['/opengraph-image.jpg'],
-    creator: '@mmwafrikapride',
+    creator: '@mmwafrika',
   },
   robots: {
     index: true,

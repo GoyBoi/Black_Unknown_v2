@@ -104,7 +104,7 @@ const ProductDetailPage = () => {
               <div className="flex items-center space-x-2">
                 <SocialShare 
                   title={product.name}
-                  url={typeof window !== 'undefined' ? window.location.href : `https://mmwafrikapride.com/product/${product.id}`}
+                  url={typeof window !== 'undefined' ? window.location.href : `https://mmwafrika.com/product/${product.id}`}
                   description={product.description.substring(0, 100) + '...'}
                 />
                 <button className="p-2 rounded-full text-white/80 hover:text-white hover:bg-white/10 ml-2">

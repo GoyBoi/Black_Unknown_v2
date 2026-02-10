@@ -7,7 +7,7 @@ export function middleware(request: NextRequest) {
     const robotsTxt = `
 User-agent: *
 Allow: /
-Sitemap: https://mmwafrikapride.com/sitemap.xml
+Sitemap: https://mmwafrika.com/sitemap.xml
     `.trim();
 
     return new NextResponse(robotsTxt, {
@@ -23,8 +23,8 @@ Sitemap: https://mmwafrikapride.com/sitemap.xml
     const humansTxt = `
 /* TEAM */
 Developer: MMWAFRIKA PRIDE
-Site: https://mmwafrikapride.com
-Twitter: @mmwafrikapride
+Site: https://mmwafrika.com
+Twitter: @mmwafrika
 Location: South Africa
 
 /* THANKS */
