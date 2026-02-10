@@ -1,15 +1,22 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import { HeartIcon, ArrowLeftIcon } from '@heroicons/react/24/outline';
+import { StarIcon } from '@heroicons/react/24/solid';
 import Link from 'next/link';
+import { useRecentlyViewed } from '@/lib/RecentlyViewedContext';
+import RecentlyViewedComponent from '@/components/RecentlyViewed';
+import SocialShare from '@/components/SocialShare';
+import ProductReviews from '@/components/ProductReviews';
 
 const ProductDetailPage = () => {
   const [selectedSize, setSelectedSize] = useState('M');
   const [quantity, setQuantity] = useState(1);
   const [selectedImage, setSelectedImage] = useState(0);
+  
+  const { addToRecentlyViewed } = useRecentlyViewed();
 
   // Sample product data
   const product = {
@@ -26,6 +33,17 @@ const ProductDetailPage = () => {
     sizes: ['XS', 'S', 'M', 'L', 'XL'],
     inStock: true,
   };
+
+  // Add product to recently viewed when component mounts
+  useEffect(() => {
+    addToRecentlyViewed({
+      id: product.id,
+      name: product.name,
+      price: product.price,
+      image: product.images[0],
+      brand: product.brand
+    });
+  }, []);
 
   const incrementQuantity = () => {
     setQuantity(prev => prev + 1);
@@ -83,9 +101,16 @@ const ProductDetailPage = () => {
                 <h1 className="text-3xl font-bold text-white mt-1">{product.name}</h1>
                 <p className="text-2xl font-bold text-primary mt-4">R{product.price.toLocaleString()}</p>
               </div>
-              <button className="p-2 rounded-full text-white/80 hover:text-white hover:bg-white/10">
-                <HeartIcon className="w-6 h-6" />
-              </button>
+              <div className="flex items-center space-x-2">
+                <SocialShare 
+                  title={product.name}
+                  url={typeof window !== 'undefined' ? window.location.href : `https://mmwafrikapride.com/product/${product.id}`}
+                  description={product.description.substring(0, 100) + '...'}
+                />
+                <button className="p-2 rounded-full text-white/80 hover:text-white hover:bg-white/10 ml-2">
+                  <HeartIcon className="w-6 h-6" />
+                </button>
+              </div>
             </div>
 
             <p className="text-white/80 mt-6 leading-relaxed">
@@ -162,6 +187,55 @@ const ProductDetailPage = () => {
                 </li>
               </ul>
             </div>
+          </div>
+        </div>
+        
+        {/* Product Reviews Section */}
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-12">
+          <div className="bg-foreground/5 rounded-lg p-6 border border-foreground/10">
+            <div className="flex items-center mb-6">
+              <div className="flex">
+                <StarIcon className="w-5 h-5 text-gold fill-current" />
+                <StarIcon className="w-5 h-5 text-gold fill-current" />
+                <StarIcon className="w-5 h-5 text-gold fill-current" />
+                <StarIcon className="w-5 h-5 text-gold fill-current" />
+                <StarIcon className="w-5 h-5 text-foreground/30" />
+              </div>
+              <span className="ml-2 text-foreground/80">(4.2/5 - 24 reviews)</span>
+            </div>
+            
+            <ProductReviews 
+              productId={product.id}
+              initialReviews={[
+                {
+                  id: 1,
+                  userName: 'Sarah J.',
+                  rating: 5,
+                  title: 'Absolutely Beautiful!',
+                  comment: 'This scarf exceeded my expectations. The quality is outstanding and the design is even more beautiful in person. Highly recommend!',
+                  date: '2026-01-15',
+                  likes: 12,
+                  verified: true
+                },
+                {
+                  id: 2,
+                  userName: 'Michael T.',
+                  rating: 4,
+                  title: 'Great Quality',
+                  comment: 'Love the craftsmanship and attention to detail. The silk feels luxurious and the pattern is stunning.',
+                  date: '2026-01-10',
+                  likes: 8,
+                  verified: true
+                }
+              ]}
+            />
+          </div>
+        </div>
+        
+        {/* Recently Viewed Section */}
+        <div className="mt-12">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <RecentlyViewedComponent />
           </div>
         </div>
       </main>

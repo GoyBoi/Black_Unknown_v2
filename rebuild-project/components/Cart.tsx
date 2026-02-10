@@ -100,10 +100,10 @@ const Cart = () => {
                     </button>
                   </div>
 
-                  <p className="text-right text-base font-medium text-foreground sm:min-w-[6rem] relative inline-block">
-                    <span className="relative z-10">R{(item.price * item.quantity).toLocaleString()}</span>
+                  <div className="text-right text-base font-medium text-foreground sm:min-w-[6rem] relative inline-block">
+                    <span className="relative z-10 block">R{(item.price * item.quantity).toLocaleString()}</span>
                     <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gold/50"></span>
-                  </p>
+                  </div>
 
                   <button
                     className="ml-4 flex h-8 w-8 items-center justify-center rounded-full text-foreground/60 transition-colors hover:bg-foreground/10 sm:hidden"
@@ -147,17 +147,20 @@ const Cart = () => {
             </div>
 
             <div className="flex flex-col gap-2">
-              <div className="flex justify-between gap-4">
+              <div className="flex justify-between gap-4 items-center">
                 <p className="text-sm text-foreground/60">Subtotal</p>
-                <p className="text-sm font-medium text-foreground">R{subtotal.toLocaleString()}</p>
+                <p className="text-sm font-medium text-foreground text-right min-w-[80px]">R{subtotal.toLocaleString()}</p>
               </div>
-              <div className="flex justify-between gap-4">
+              <div className="flex justify-between gap-4 items-center">
                 <p className="text-sm text-foreground/60">Shipping</p>
-                <p className="text-sm font-medium text-foreground">Calculated at next step</p>
+                <p className="text-sm font-medium text-foreground text-right min-w-[80px]">-</p>
               </div>
-              <div className="mt-2 flex justify-between gap-4 border-t border-foreground/20 pt-2">
+              <div className="mt-2 flex justify-between gap-4 items-center border-t border-foreground/20 pt-2">
                 <p className="text-lg font-bold text-foreground">Total</p>
-                <p className="text-lg font-bold text-foreground">R{total.toLocaleString()}</p>
+                <p className="text-lg font-bold text-foreground text-right min-w-[80px] relative inline-block">
+                  <span className="relative z-10 block">R{total.toLocaleString()}</span>
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gold/50"></span>
+                </p>
               </div>
             </div>
           </div>

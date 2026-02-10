@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import ProductCard from '@/components/ProductCard';
+import AdvancedFilter from '@/components/AdvancedFilter';
 
 // Define product type
 interface Product {
@@ -114,22 +115,33 @@ const ShopPage = () => {
   ];
 
   // State for filters and sorting
-  const [selectedCategory, setSelectedCategory] = useState<string>('All');
-  const [priceRange, setPriceRange] = useState<[number, number]>([0, 2000]);
+  const [filters, setFilters] = useState({
+    categories: [] as string[],
+    brands: [] as string[],
+    sizes: [] as string[],
+    colors: [] as string[],
+    minPrice: 0,
+    maxPrice: 2000,
+    ratings: [] as number[],
+  });
   const [sortBy, setSortBy] = useState<string>('featured');
   const [searchTerm, setSearchTerm] = useState<string>('');
-  
+
   // Get unique categories
   const categories = ['All', ...new Set(allProducts.map(product => product.category))];
-  
+
   // Filter and sort products
   const filteredProducts = allProducts
     .filter(product => {
-      const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory;
-      const matchesPrice = product.price >= priceRange[0] && product.price <= priceRange[1];
-      const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
+      const matchesCategory = filters.categories.length === 0 || filters.categories.includes('All') || filters.categories.includes(product.category);
+      const matchesBrand = filters.brands.length === 0 || filters.brands.includes('All') || filters.brands.includes(product.brand);
+      const matchesSize = filters.sizes.length === 0 || filters.sizes.includes('All') || (product.sizes && product.sizes.some(size => filters.sizes.includes(size)));
+      const matchesColor = filters.colors.length === 0 || filters.colors.includes('All') || (product.colors && product.colors.some(color => filters.colors.includes(color)));
+      const matchesPrice = product.price >= filters.minPrice && product.price <= filters.maxPrice;
+      const matchesSearch = product.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
                            product.brand.toLowerCase().includes(searchTerm.toLowerCase());
-      return matchesCategory && matchesPrice && matchesSearch;
+      const matchesRating = filters.ratings.length === 0 || filters.ratings.some(rating => product.rating >= rating);
+      return matchesCategory && matchesBrand && matchesSize && matchesColor && matchesPrice && matchesSearch && matchesRating;
     })
     .sort((a, b) => {
       switch (sortBy) {
@@ -170,71 +182,23 @@ const ShopPage = () => {
 
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Sidebar Filters */}
-          <aside className="lg:w-1/4 bg-background border border-foreground/10 rounded-lg p-6 h-fit sticky top-24">
-            <h2 className="text-xl font-bold text-foreground mb-4">Filters</h2>
-            
-            {/* Search */}
-            <div className="mb-6">
-              <label htmlFor="search" className="block text-sm font-medium text-foreground mb-2">Search</label>
-              <div className="relative">
-                <input
-                  type="text"
-                  id="search"
-                  placeholder="Search products..."
-                  className="w-full bg-background border border-foreground/20 rounded-lg py-2 px-4 text-foreground focus:ring-gold focus:border-gold"
-                  value={searchTerm}
-                  onChange={(e) => setSearchTerm(e.target.value)}
-                />
-                <svg className="absolute right-3 top-2.5 h-5 w-5 text-foreground/60" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-                </svg>
-              </div>
-            </div>
-            
-            {/* Categories */}
-            <div className="mb-6">
-              <h3 className="text-lg font-semibold text-foreground mb-3">Categories</h3>
-              <div className="space-y-2">
-                {categories.map(category => (
-                  <div key={category} className="flex items-center">
-                    <input
-                      id={`category-${category}`}
-                      type="radio"
-                      name="category"
-                      checked={selectedCategory === category}
-                      onChange={() => setSelectedCategory(category)}
-                      className="w-4 h-4 text-gold bg-background border-foreground/20 focus:ring-gold focus:ring-offset-background"
-                    />
-                    <label
-                      htmlFor={`category-${category}`}
-                      className="ml-2 text-foreground"
-                    >
-                      {category}
-                    </label>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            {/* Price Range */}
-            <div className="mb-6">
-              <h3 className="text-lg font-semibold text-foreground mb-3">Price Range</h3>
-              <div className="px-1">
-                <input
-                  type="range"
-                  min="0"
-                  max="2000"
-                  step="50"
-                  value={priceRange[1]}
-                  onChange={(e) => setPriceRange([priceRange[0], parseInt(e.target.value)])}
-                  className="w-full h-2 bg-foreground/20 rounded-lg appearance-none cursor-pointer"
-                />
-                <div className="flex justify-between text-sm text-foreground/80 mt-1">
-                  <span>R {priceRange[0]}</span>
-                  <span>R {priceRange[1]}</span>
-                </div>
-              </div>
-            </div>
+          <aside className="lg:w-1/4">
+            <AdvancedFilter 
+              filterOptions={{
+                categories: ['All', ...new Set(allProducts.map(p => p.category))],
+                brands: ['All', ...new Set(allProducts.map(p => p.brand))],
+                sizes: ['All', ...new Set(allProducts.flatMap(p => p.sizes || []))].filter(Boolean),
+                colors: ['All', ...new Set(allProducts.flatMap(p => p.colors || []))].filter(Boolean),
+                priceRange: [0, 2000],
+                ratings: [1, 2, 3, 4, 5]
+              }}
+              onFilterChange={(newFilters) => {
+                setFilters({
+                  ...filters,
+                  ...newFilters
+                });
+              }}
+            />
           </aside>
 
           {/* Main Content */}

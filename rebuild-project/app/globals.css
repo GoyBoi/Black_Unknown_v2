@@ -7,21 +7,21 @@
     --background: 0 0% 100%;
     --foreground: 0 0% 0%;
     --muted: 210 40% 96.1%;
-    --muted-foreground: 0 0% 40%;
+    --muted-foreground: 0 0% 20%; /* Increased contrast from 40% to 20% */
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 0%;
     --card: 0 0% 100%;
     --card-foreground: 0 0% 0%;
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
+    --border: 0 0% 85%; /* Increased contrast from 90% to 85% */
+    --input: 0 0% 85%; /* Increased contrast from 90% to 85% */
     --primary: 0 0% 0%;
     --primary-foreground: 0 0% 100%;
     --secondary: 0 0% 95%;
-    --secondary-foreground: 0 0% 15%;
+    --secondary-foreground: 0 0% 10%; /* Increased contrast from 15% to 10% */
     --accent: 0 0% 95%;
-    --accent-foreground: 0 0% 15%;
+    --accent-foreground: 0 0% 10%; /* Increased contrast from 15% to 10% */
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 0 0% 100%; /* Increased contrast from 98% to 100% */
     --ring: 0 0% 0%;
     --gold: 48 100% 50%;
     --gold-light: 48 100% 70%;
@@ -33,21 +33,21 @@
     --background: 0 0% 0%;
     --foreground: 0 0% 100%;
     --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
+    --muted-foreground: 0 0% 80%; /* Increased contrast from 65% to 80% */
     --popover: 0 0% 0%;
     --popover-foreground: 0 0% 100%;
     --card: 0 0% 0%;
     --card-foreground: 0 0% 100%;
-    --border: 0 0% 20%;
-    --input: 0 0% 10%;
+    --border: 0 0% 30%; /* Increased contrast from 20% to 30% */
+    --input: 0 0% 15%; /* Increased contrast from 10% to 15% */
     --primary: 0 0% 100%;
     --primary-foreground: 0 0% 0%;
-    --secondary: 0 0% 10%;
-    --secondary-foreground: 0 0% 90%;
-    --accent: 0 0% 10%;
-    --accent-foreground: 0 0% 90%;
+    --secondary: 0 0% 15%; /* Increased contrast from 10% to 15% */
+    --secondary-foreground: 0 0% 95%; /* Increased contrast from 90% to 95% */
+    --accent: 0 0% 15%; /* Increased contrast from 10% to 15% */
+    --accent-foreground: 0 0% 95%; /* Increased contrast from 90% to 95% */
     --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 0 0% 100%;
     --ring: 0 0% 100%;
     --gold: 48 100% 50%;
     --gold-light: 48 100% 70%;

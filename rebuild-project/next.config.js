@@ -19,7 +19,27 @@ const nextConfig = {
         protocol: 'http',
         hostname: 'localhost',
       },
+      {
+        protocol: 'https',
+        hostname: 'cdn.shopify.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'ik.imagekit.io',
+      },
     ],
+    // Configure image optimization formats
+    formats: ['image/webp', 'image/avif'],
+  },
+  // Enable compression
+  compress: true,
+  // Optimize packages
+  experimental: {
+    optimizePackageImports: ['@heroicons/react', 'lucide-react'],
   },
 };
 

@@ -1,6 +1,10 @@
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import Link from 'next/link';
-import { HeartIcon, StarIcon } from '@heroicons/react/24/outline';
+import { HeartIcon, EyeIcon } from '@heroicons/react/24/outline';
+import { StarIcon } from '@heroicons/react/24/solid';
+import QuickView from './QuickView';
 
 interface Product {
   id: number;
@@ -13,34 +17,37 @@ interface Product {
   stock?: number;
   colors?: string[];
   sizes?: string[];
+  description?: string;
 }
 
 const ProductCard = ({ product }: { product: Product }) => {
+  const [showQuickView, setShowQuickView] = useState(false);
+
   // Render star rating
   const renderRating = () => {
     const stars = [];
     const fullStars = Math.floor(product.rating || 0);
     const hasHalfStar = product.rating && product.rating % 1 >= 0.5;
-    
+
     for (let i = 0; i < fullStars; i++) {
       stars.push(
         <StarIcon key={i} className="w-4 h-4 text-gold fill-current" />
       );
     }
-    
+
     if (hasHalfStar) {
       stars.push(
         <StarIcon key="half" className="w-4 h-4 text-gold fill-current" />
       );
     }
-    
+
     const remainingStars = 5 - stars.length;
     for (let i = 0; i < remainingStars; i++) {
       stars.push(
         <StarIcon key={`empty-${i}`} className="w-4 h-4 text-gold" />
       );
     }
-    
+
     return (
       <div className="flex items-center">
         <div className="flex">{stars}</div>
@@ -48,6 +55,9 @@ const ProductCard = ({ product }: { product: Product }) => {
       </div>
     );
   };
+
+  // Default description if not provided
+  const defaultDescription = "Experience the exquisite craftsmanship of our hand-knitted crochet items. Each piece is meticulously created with attention to detail and premium materials.";
 
   return (
     <div className="group relative flex flex-col overflow-hidden rounded-lg transition-all duration-300 hover:shadow-2xl hover:shadow-black/30 dark:hover:shadow-black/50 border border-transparent hover:border-gold/30 h-full">
@@ -59,9 +69,22 @@ const ProductCard = ({ product }: { product: Product }) => {
         />
         {/* Placeholder pattern for when image fails to load */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgdmlld0JveD0iMCAwIDgwIDgwIj48ZyBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMzMzMiPjxwYXRoIGQ9Ik04MCA0MGwtNDAgNDBMNCA0MEw0NCBMMTAgMEw0MCA0MGwyMC0yMEw4MCA0MHoiIG9wYWNpdHk9Ii4xIi8+PHBhdGggZD0iTTAgNDBsNDAgLTQwbDQwIDQwTDQwIDgweiIgb3BhY2l0eT0iLjEiLz48L2c+PC9nPjwvc3ZnPg==')] opacity-20"></div>
-        <button className="absolute top-3 right-3 z-10 p-2 bg-background/80 backdrop-blur-sm rounded-full text-foreground/80 hover:text-gold transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0">
-          <HeartIcon className="w-4 h-4" />
-        </button>
+        
+        {/* Action buttons */}
+        <div className="absolute top-3 right-3 flex flex-col gap-2 z-10">
+          <button 
+            className="p-2 bg-background/80 backdrop-blur-sm rounded-full text-foreground/80 hover:text-gold transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0"
+            onClick={(e) => {
+              e.preventDefault();
+              setShowQuickView(true);
+            }}
+          >
+            <EyeIcon className="w-4 h-4" />
+          </button>
+          <button className="p-2 bg-background/80 backdrop-blur-sm rounded-full text-foreground/80 hover:text-gold transition-all duration-300 opacity-0 group-hover:opacity-100 transform translate-y-2 group-hover:translate-y-0">
+            <HeartIcon className="w-4 h-4" />
+          </button>
+        </div>
 
         {/* Category Badge */}
         {product.category && (
@@ -101,6 +124,19 @@ const ProductCard = ({ product }: { product: Product }) => {
           </p>
         </div>
       </div>
+
+      {/* Quick View Modal */}
+      {showQuickView && (
+        <QuickView 
+          product={{
+            ...product,
+            description: product.description || defaultDescription,
+            sizes: product.sizes || ['XS', 'S', 'M', 'L', 'XL']
+          }} 
+          isOpen={showQuickView} 
+          onClose={() => setShowQuickView(false)} 
+        />
+      )}
     </div>
   );
 };

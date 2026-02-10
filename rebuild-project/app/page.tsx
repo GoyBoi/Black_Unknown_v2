@@ -109,7 +109,7 @@ const HomePage = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
               {featuredProducts.map((product) => (
                 <div key={product.id} className="transition-transform duration-500 hover:-translate-y-2">
-                  <ProductCard key={product.id} product={product} />
+                  <ProductCard product={product} />
                 </div>
               ))}
             </div>
@@ -157,7 +157,7 @@ const HomePage = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {newArrivals.map((product) => (
                 <div key={product.id} className="transition-transform duration-500 hover:-translate-y-2">
-                  <ProductCard key={product.id} product={product} />
+                  <ProductCard product={product} />
                 </div>
               ))}
             </div>

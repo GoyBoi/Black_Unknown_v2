@@ -46,6 +46,8 @@ const Footer = () => {
               <li><Link className="hover:text-gold transition-colors block" href="/shipping">Shipping</Link></li>
               <li><Link className="hover:text-gold transition-colors block" href="/returns">Returns</Link></li>
               <li><Link className="hover:text-gold transition-colors block" href="/faq">FAQ</Link></li>
+              <li><Link className="hover:text-gold transition-colors block" href="/care">Care Instructions</Link></li>
+              <li><Link className="hover:text-gold transition-colors block" href="/size-guide">Size Guide</Link></li>
             </ul>
           </div>
 
@@ -58,14 +60,80 @@ const Footer = () => {
               <li><Link className="hover:text-gold transition-colors block" href="/shop#home-decor">Home Decor</Link></li>
             </ul>
           </div>
+
+          <div>
+            <h3 className="font-bold text-foreground mb-4">Learn</h3>
+            <ul className="space-y-2 text-sm">
+              <li><Link className="hover:text-gold transition-colors block" href="/blog">Blog</Link></li>
+              <li><Link className="hover:text-gold transition-colors block" href="/about">About Us</Link></li>
+              <li><Link className="hover:text-gold transition-colors block" href="/care">Care Guide</Link></li>
+              <li><Link className="hover:text-gold transition-colors block" href="/testimonials">Testimonials</Link></li>
+            </ul>
+          </div>
           
           <div>
             <h3 className="font-bold text-foreground mb-4">Connect</h3>
             <ul className="space-y-2 text-sm">
-              <li><a className="hover:text-gold transition-colors block" href="#">Instagram</a></li>
-              <li><a className="hover:text-gold transition-colors block" href="#">Twitter</a></li>
-              <li><a className="hover:text-gold transition-colors block" href="#">Facebook</a></li>
+              <li><a className="hover:text-gold transition-colors block" href="https://instagram.com/mmwafrikapride" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+              <li><a className="hover:text-gold transition-colors block" href="https://twitter.com/mmwafrikapride" target="_blank" rel="noopener noreferrer">Twitter</a></li>
+              <li><a className="hover:text-gold transition-colors block" href="https://facebook.com/mmwafrikapride" target="_blank" rel="noopener noreferrer">Facebook</a></li>
             </ul>
+          </div>
+
+          <div>
+            <h3 className="font-bold text-foreground mb-4">Trust & Security</h3>
+            <div className="flex flex-wrap gap-3">
+              <div className="flex items-center">
+                <div className="w-6 h-6 mr-2">
+                  <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm0 10.99h7c-.53 4.12-3.28 7.79-7 8.94V12H5V6.3l7-3.11v8.8z"/>
+                  </svg>
+                </div>
+                <span className="text-xs">Secure SSL</span>
+              </div>
+              <div className="flex items-center">
+                <div className="w-6 h-6 mr-2">
+                  <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </div>
+                <span className="text-xs">Verified</span>
+              </div>
+              <div className="flex items-center">
+                <div className="w-6 h-6 mr-2">
+                  <svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                  </svg>
+                </div>
+                <span className="text-xs">Fast Delivery</span>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="font-bold text-foreground mb-4">Payment Methods</h3>
+            <div className="flex flex-wrap gap-3">
+              <div className="flex items-center">
+                <div className="w-8 h-5 bg-gray-800 rounded-sm flex items-center justify-center">
+                  <span className="text-[8px] font-bold text-white">VISA</span>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <div className="w-8 h-5 bg-blue-700 rounded-sm flex items-center justify-center">
+                  <span className="text-[8px] font-bold text-white">MC</span>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <div className="w-8 h-5 bg-orange-500 rounded-sm flex items-center justify-center">
+                  <span className="text-[8px] font-bold text-white">AMEX</span>
+                </div>
+              </div>
+              <div className="flex items-center">
+                <div className="w-8 h-5 bg-green-600 rounded-sm flex items-center justify-center">
+                  <span className="text-[8px] font-bold text-white">OZOW</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
         

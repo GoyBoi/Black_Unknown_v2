@@ -4,6 +4,61 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ShoppingBagIcon, UserIcon, MagnifyingGlassIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import ThemeToggle from '@/components/ThemeToggle';
+import AdvancedSearch from '@/components/AdvancedSearch';
+
+// Mock product data for search
+const mockProducts = [
+  {
+    id: 1,
+    name: 'Hand-knitted Cardigan',
+    price: 890,
+    image: 'https://images.unsplash.com/photo-1583324115154-580e6c7b0e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+    brand: 'MMWAFRIKA PRIDE',
+    category: 'Clothing',
+    rating: 4.5,
+    stock: 5,
+  },
+  {
+    id: 2,
+    name: 'Crochet Doll Set',
+    price: 650,
+    image: 'https://images.unsplash.com/photo-1583324115154-580e6c7b0e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+    brand: 'MMWAFRIKA PRIDE',
+    category: 'Dolls',
+    rating: 4.8,
+    stock: 8,
+  },
+  {
+    id: 3,
+    name: 'Crocheted Flower Bouquet',
+    price: 220,
+    image: 'https://images.unsplash.com/photo-1595444666477-c921977d4f8d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+    brand: 'MMWAFRIKA PRIDE',
+    category: 'Flowers',
+    rating: 4.3,
+    stock: 12,
+  },
+  {
+    id: 4,
+    name: 'Baby Crochet Set',
+    price: 450,
+    image: 'https://images.unsplash.com/photo-1583324115154-580e6c7b0e5c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+    brand: 'MMWAFRIKA PRIDE',
+    category: 'Clothing',
+    rating: 4.7,
+    stock: 3,
+  },
+  {
+    id: 5,
+    name: 'Crocheted Shawl',
+    price: 780,
+    image: 'https://images.unsplash.com/photo-1595444666477-c921977d4f8d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+    brand: 'MMWAFRIKA PRIDE',
+    category: 'Clothing',
+    rating: 4.6,
+    stock: 6,
+  },
+];
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,25 +82,17 @@ const Header = () => {
 
   return (
     <>
-      {/* Search Modal */}
+      {/* Search functionality */}
       {searchModalOpen && (
         <div className="fixed inset-0 z-50 bg-background/90 backdrop-blur-md flex items-start justify-center pt-24 px-4">
           <div className="w-full max-w-2xl bg-background border border-foreground/20 rounded-lg p-6 relative">
-            <button 
+            <button
               onClick={() => setSearchModalOpen(false)}
               className="absolute top-4 right-4 p-2 rounded-full hover:bg-foreground/10 transition-colors"
             >
               <XMarkIcon className="w-5 h-5 text-foreground" />
             </button>
-            <div className="flex items-center gap-3">
-              <MagnifyingGlassIcon className="w-6 h-6 text-foreground/60" />
-              <input
-                type="text"
-                placeholder="Search MMWAFRIKA PRIDE..."
-                className="w-full bg-transparent text-foreground text-xl placeholder-foreground/60 focus:outline-none"
-                autoFocus
-              />
-            </div>
+            <AdvancedSearch products={mockProducts} />
           </div>
         </div>
       )}
@@ -84,7 +131,7 @@ const Header = () => {
               ></path>
             </svg>
           </div>
-          <Link href="/" className={`${isScrolled ? 'text-foreground' : 'text-foreground drop-shadow-[0_2px_2px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_2px_2px_rgba(255,255,255,0.8)]'} text-lg font-bold tracking-[-0.015em]`}>
+          <Link href="/" className={`${isScrolled ? 'text-foreground' : 'text-foreground'} text-lg font-bold tracking-[-0.015em]`}>
             MMWAFRIKA PRIDE
           </Link>
         </div>
@@ -92,7 +139,7 @@ const Header = () => {
         {/* Desktop Navigation */}
         <nav className="hidden md:flex flex-1 justify-center items-center gap-9">
           <div className="relative group">
-            <Link href="/shop" className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} hover:text-gold text-sm font-medium leading-normal transition-colors duration-300 flex items-center`}>
+            <Link href="/shop" className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80'} hover:text-gold text-sm font-medium leading-normal transition-colors duration-300 flex items-center`}>
               Products
               <svg className="w-4 h-4 ml-1 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>
@@ -109,29 +156,29 @@ const Header = () => {
               </div>
             </div>
           </div>
-          <Link href="/about" className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} hover:text-gold text-sm font-medium leading-normal transition-colors duration-300`}>
+          <Link href="/about" className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80'} hover:text-gold text-sm font-medium leading-normal transition-colors duration-300`}>
             About
           </Link>
         </nav>
 
         {/* Mobile Menu Button - Consolidated with icons */}
         <div className="flex items-center gap-2 md:hidden">
-          <button 
+          <button
             onClick={() => setSearchModalOpen(true)}
-            className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} p-2 rounded-full hover:bg-foreground/10 transition-colors duration-300`}
+            className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80'} p-2 rounded-full hover:bg-foreground/10 transition-colors duration-300`}
           >
             <MagnifyingGlassIcon className="w-5 h-5" />
           </button>
-          <button 
+          <button
             onClick={() => setWishlistOpen(true)}
-            className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} p-2 rounded-full hover:bg-foreground/10 transition-colors duration-300 relative`}
+            className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80'} p-2 rounded-full hover:bg-foreground/10 transition-colors duration-300 relative`}
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
             </svg>
           </button>
           <ThemeToggle isScrolled={isScrolled} />
-          <Link href="/cart" className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} p-2 rounded-full hover:bg-gold/20 transition-colors duration-300 relative`}>
+          <Link href="/cart" className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80'} p-2 rounded-full hover:bg-gold/20 transition-colors duration-300 relative`}>
             <ShoppingBagIcon className="w-5 h-5" />
             <span className="absolute -top-1 -right-1 bg-gold text-black text-xs rounded-full w-5 h-5 flex items-center justify-center animate-pulse">
               2
@@ -139,7 +186,7 @@ const Header = () => {
           </Link>
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} p-2 rounded-full hover:bg-foreground/10 transition-colors duration-300`}
+            className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80'} p-2 rounded-full hover:bg-foreground/10 transition-colors duration-300`}
             aria-label="Open menu"
           >
             {mobileMenuOpen ? (
@@ -152,22 +199,22 @@ const Header = () => {
 
         {/* Desktop Icons */}
         <div className="hidden md:flex items-center gap-4">
-          <button 
+          <button
             onClick={() => setSearchModalOpen(true)}
-            className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} p-2 rounded-full hover:bg-foreground/10 transition-colors duration-300`}
+            className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80'} p-2 rounded-full hover:bg-foreground/10 transition-colors duration-300`}
           >
             <MagnifyingGlassIcon className="w-5 h-5" />
           </button>
-          <button 
+          <button
             onClick={() => setWishlistOpen(true)}
-            className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} p-2 rounded-full hover:bg-foreground/10 transition-colors duration-300 relative`}
+            className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80'} p-2 rounded-full hover:bg-foreground/10 transition-colors duration-300 relative`}
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
             </svg>
           </button>
           <ThemeToggle isScrolled={isScrolled} />
-          <Link href="/cart" className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)] dark:drop-shadow-[0_1px_1px_rgba(255,255,255,0.8)]'} p-2 rounded-full hover:bg-gold/20 transition-colors duration-300 relative`}>
+          <Link href="/cart" className={`${isScrolled ? 'text-foreground/80' : 'text-foreground/80'} p-2 rounded-full hover:bg-gold/20 transition-colors duration-300 relative`}>
             <ShoppingBagIcon className="w-5 h-5" />
             <span className="absolute -top-1 -right-1 bg-gold text-black text-xs rounded-full w-5 h-5 flex items-center justify-center animate-pulse">
               2
