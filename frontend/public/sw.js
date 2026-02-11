@@ -8,11 +8,8 @@ const API_CACHE_NAME = 'api-v1';
 const staticUrlsToCache = [
   '/',
   '/offline',
-  '/index.html',
   '/manifest.json',
   '/favicon.ico',
-  '/assets/css/style.css',
-  '/assets/js/main.js',
 ];
 
 // Install event - cache static resources

@@ -25,6 +25,7 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://mmwafrika.com'),
   title: {
     default: 'MMWAFRIKA PRIDE - Handcrafted Crochet Creations',
     template: '%s | MMWAFRIKA PRIDE'
